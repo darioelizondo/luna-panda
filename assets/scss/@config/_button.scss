@@ -1,0 +1,26 @@
+@use 'index';
+
+// Button
+.button {
+    
+    width: auto;
+    color: index.$text;
+    padding: calc( index.$lh / 3 ) calc( index.$lh / 2 );
+    border-radius: 100px;
+    background-color: index.$black;
+
+    &:hover {
+        background-color: index.$gray;
+    }
+
+    @include index.m {
+        width: auto;
+        padding: calc( index.$lh / 3 ) index.$lh * .8;
+    }
+
+    @include index.l {
+        width: auto;
+        padding: calc( index.$lh / 3 ) index.$lh * 1.4;
+    }
+
+}

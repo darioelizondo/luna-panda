@@ -1,0 +1,45 @@
+@use 'index';
+
+// Color
+.primary {
+	color: index.$primary;
+}
+.gray {
+	color: index.$gray;
+}
+.text {
+	color: index.$text;
+}
+.soft-gray {
+	color: index.$soft-gray;
+}
+.white {
+	color: index.$white;
+}
+.black {
+	color: index.$white;
+}
+
+
+// Background color
+.bg--soft-gray {
+	background-color: index.$soft-gray;
+}
+
+// Border color
+
+.border--white {
+	border: solid 1px index.$white;
+}
+.border--black {
+	border: solid 1px index.$black;
+}
+.border--text {
+	border: solid 1px index.$text;
+}
+.border--gray {
+	border: solid 1px index.$gray;
+}
+.border--soft-gray {
+	border: solid 1px index.$soft-gray;
+}

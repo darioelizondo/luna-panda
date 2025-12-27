@@ -1,0 +1,30 @@
+{
+  "name": "luna-panda",
+  "version": "1.0.0",
+  "description": "Website development for Luna-Panda",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darioelizondo/luna-panda.git"
+  },
+  "author": "Darío Elizondo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darioelizondo/luna-panda/issues"
+  },
+  "homepage": "https://github.com/darioelizondo/luna-panda#readme",
+  "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^3.0.0",
+    "gulp-sass": "^6.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.83.4",
+    "uglify-js": "^3.19.3"
+  }
+}

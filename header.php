@@ -11,18 +11,19 @@
     <html <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
-        <link href="<?php echo esc_attr( TDU ); ?>/favicon.ico" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Favicon light-->
-        <link rel="icon" href="<?php echo TDU; ?>/assets/images/favicon/favicon-deema-murad-light.png" media="(prefers-color-scheme: light)">
-        <!-- Favicon dark -->
-        <link rel="icon" href="<?php echo TDU; ?>/assets/images/favicon/favicon-deema-murad-dark.png" media="(prefers-color-scheme: dark)">
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo TDU; ?>/assets/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo TDU; ?>/assets/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo TDU; ?>/assets/images/favicon/favicon-16x16.png">
+        <link rel="icon" href="<?php echo TDU; ?>/assets/images/favicon/favicon.ico">
+        <!-- Theme color -->
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
 
         <?php wp_head(); ?>
     </head>
-
-    <?php include TD . '/template-parts/components/molecules/terms-and-conditions-popup.php'; ?>
     
     <body <?php body_class(); ?>>
         <main class="main">
-            <?php include TD . '/template-parts/components/organisms/header.php'; ?>
+            <?php // include TD . '/template-parts/components/organisms/header.php'; ?>

@@ -1,0 +1,111 @@
+@use 'index';
+
+.heading--1 {
+	font-size: 38px;
+	line-height: 38px;
+	font-weight: 500;
+	@include index.l {
+		font-size: 45px;
+		line-height: 45px;
+	}
+	@include index.xl {
+		font-size: 48px;
+		line-height: 48px;
+	}
+	@include index.xxl {
+		font-size: 60px;
+		line-height: 60px;
+	}
+}
+.heading--2 {
+	font-size: 28px;
+	line-height: 34px;
+	font-weight: 500;
+	@include index.l {
+		font-size: 32px;
+		line-height: 38px;
+	}
+	@include index.xl {
+		font-size: 38px;
+		line-height: 38px;
+	}
+	@include index.xxl {
+		font-size: 42px;
+		line-height: 42px;
+	}
+}
+.heading--3 {
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: 400;
+	@include index.l {
+		font-size: 28px;
+		line-height: 34px;
+	}
+	@include index.xl {
+		font-size: 32px;
+		line-height: 38px;
+	}
+	@include index.xxl {
+		font-size: 36px;
+		line-height: 42px;
+	}
+}
+.heading--4 {
+	font-size: 20px;
+	line-height: 26px;
+	font-weight: 900;
+	@include index.l {
+		font-size: 22px;
+		line-height: 28px;
+	}
+	@include index.xl {
+		font-size: 24px;
+		line-height: 30px;
+	}
+	@include index.xl {
+		font-size: 26px;
+		line-height: 32px;
+	}
+}
+.heading--5 {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 900;
+	@include index.l {
+		font-size: 18px;
+		line-height: 26px;
+	}
+	@include index.xl {
+		font-size: 20px;
+		line-height: 28px;
+	}
+}
+.heading--6 {
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 900;
+	@include index.l {
+		font-size: 16px;
+		line-height: 24px;
+	}
+	@include index.xl {
+		font-size: 18px;
+		line-height: 26px;
+	}
+}
+.label {
+	font-size: 10px;
+	line-height: 20px;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	@include index.l {
+		font-size: 11px;
+		line-height: 21px;
+	}
+	@include index.xl {
+		font-size: 12px;
+		line-height: 22px;
+	}
+}
