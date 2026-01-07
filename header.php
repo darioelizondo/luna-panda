@@ -4,6 +4,7 @@
      * Header
      * 
      * @package Darío Elizondo
+     * 
      */
 
 ?>
@@ -25,5 +26,17 @@
     </head>
     
     <body <?php body_class(); ?>>
-        <main class="main">
-            <?php // include TD . '/template-parts/components/organisms/header.php'; ?>
+
+        <!-- Loader -->
+        <div class="loader">
+          <canvas id="burn-canvas"></canvas>
+        </div>
+        <!-- End loader -->
+
+        <?php include TD . '/template-parts/components/organisms/header.php'; ?>
+
+        <div data-barba="wrapper" class="site-wrapper">
+            <main class="main" data-barba="container" data-barba-namespace="<?php echo esc_attr( get_post_type() ?: 'page' ); ?>">
+
+            <div style="width: 100%; height: 400px; background: #fff;"></div>
+            <div style="width: 100%; height: 400px; background: red;"></div>

@@ -30,12 +30,8 @@ body {
 	font-weight: 400;
 	line-height: index.$lh;
 	overflow: hidden;
-	background: index.$white;
+	background: index.$black;
 	position: relative;
-}
-
-.home {
-	background-color: index.$white;
 }
 
 p,
@@ -274,4 +270,18 @@ button:focus {
 		}
 	}
 
+}
+
+// Barba
+.site-wrapper {
+	position: relative;
+}
+[data-barba="container"] {
+	width: 100%;
+	// will-change: opacity;
+}
+
+/* El wrapper sirve como contexto */
+[data-barba="wrapper"] {
+  position: relative;
 }

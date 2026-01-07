@@ -9,9 +9,10 @@
 
 ?>
     
-		<?php // include TD . '/template-parts/components/organisms/footer.php'; ?>
+		  <?php // include TD . '/template-parts/components/organisms/footer.php'; ?>
 
-    </main>
+      </main>
+    </div>
     <?php wp_footer(); ?>
 </body>
 </html>
