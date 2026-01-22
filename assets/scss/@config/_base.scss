@@ -2,7 +2,7 @@
 
 * {
 	box-sizing: border-box;
-	font-family: index.$font-secondary;
+	font-family: index.$font-primary;
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 19px;
@@ -25,7 +25,7 @@ html {
 
 body {
 	color: index.$text;
-	font-family: index.$font-secondary;
+	font-family: index.$font-primary;
 	font-variant-ligatures: none;
 	font-weight: 400;
 	line-height: index.$lh;
