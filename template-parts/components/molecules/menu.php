@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Molecule: Menu
+ *
+ * @package Darío Elizondo
+ * 
+ */
+
+?>
+
+<!-- Menu -->
+<div class="menu">
+
+</div>
+<!-- End menu -->
