@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Atom: Logo
+ * Component: Atom: Logo
  *
  * @package Darío Elizondo
  * 

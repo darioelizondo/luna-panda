@@ -7,6 +7,8 @@
      * 
      */
 
+    $header_caption = get_field( 'header_caption', 'option' );
+
 ?>
 
 <!-- Header -->
@@ -27,17 +29,11 @@
                 </div>
             </div>
             <!-- End content --> 
-            <!-- Contact -->
-            <div class="header__contact">
-            </div>
-        </div>
         <!-- End wrapper -->
-        <!-- End contact -->
-        <!-- Slider -->
-        <div class="header__slider">
-
-        </div>
-        <!-- End slider -->
     </div>
 </header>
 <!-- End header -->
+
+<?php
+    unset( $header_caption );
+?>

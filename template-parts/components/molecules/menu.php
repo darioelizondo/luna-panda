@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Molecule: Menu
+ * Component: Molecule: Menu
  *
  * @package Darío Elizondo
  * 
