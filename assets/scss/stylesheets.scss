@@ -1,13 +1,18 @@
 // @Config
 @use '@config/reset';
+@use '@config/fonts';
 @use '@config/base';
 @use '@config/color';
 @use '@config/headings';
 @use '@config/button';
 
 // Atoms
+@use 'atoms/logo';
+@use 'atoms/header-caption';
 
 // Molecules
+@use 'molecules/main-slider';
+
 
 // Organisms
 @use 'organisms/loader';

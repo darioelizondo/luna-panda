@@ -11,8 +11,8 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 	acf_add_options_page(
 		array(
-			'page_title' => 'Configuration',
-			'menu_title' => 'Configuration',
+			'page_title' => 'Custom settings',
+			'menu_title' => 'Custom settings',
 			'menu_slug'  => 'site_options',
 			'capability' => 'edit_posts',
 			'position'   => '25',
@@ -24,8 +24,8 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 	acf_add_options_sub_page(
 		array(
-			'page_title'  => 'Configuration',
-			'menu_title'  => 'Configuration',
+			'page_title'  => 'Custom settings',
+			'menu_title'  => 'Custom settings',
 			'parent_slug' => 'site_options',
 			'menu_slug'   => 'site_options'
 		)

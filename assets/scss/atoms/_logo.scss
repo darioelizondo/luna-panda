@@ -1,0 +1,68 @@
+@use '../@config/index';
+
+// Logo
+.logo {
+
+    // Link
+    &__link {
+        display: flex;
+        flex-direction: column;
+        gap: index.$lh;
+
+        @include index.l {
+            gap: calc( index.$lh * 1.5 );
+        }
+
+        @include index.xl {
+            gap: calc( index.$lh * 2 );
+        }
+
+    }
+    
+    // Isotype
+    &__isotype {
+        width: 75px;
+        height: auto;
+
+        @include index.m {
+            width: 90px;
+        }
+
+        @include index.l {
+            width: 110px;
+        }
+
+        @include index.xl {
+            width: 125px;
+        }
+
+        @include index.xxl {
+            width: 145px;
+        }
+
+    }
+
+    // Logotype
+    &__logotype {
+        width: 250px;
+        height: auto;
+
+        @include index.m {
+            width: 350px;
+        }
+
+        @include index.l {
+            width: 450px;
+        }
+
+        @include index.xl {
+            width: 550px;
+        }
+
+        @include index.xxl {
+            width: 650px;
+        }
+
+    }
+
+}

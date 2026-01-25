@@ -3,12 +3,12 @@ import './loader';
 import './page-transition';
 
 // Modules UI
-// import initAccordions from './modules/accordions';
+import { mainSlider } from './modules/main-slider';
 // import initTabs from './modules/tabs';
 // import initForms from './modules/forms';
 
 function init(root = document) {
-  // initAccordions(root);
+  mainSlider(root);
   // initTabs(root);
   // initForms(root);
 }

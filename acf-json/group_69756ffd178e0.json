@@ -1,0 +1,109 @@
+{
+    "key": "group_69756ffd178e0",
+    "title": "Appareance options",
+    "fields": [
+        {
+            "key": "field_69756ffdf4940",
+            "label": "Appareance options",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_697570b0f4942",
+            "label": "Padding top",
+            "name": "padding_top",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "150px": "Extra Large (150px)",
+                "100px": "Large (100px)",
+                "75px": "Medium (75px)",
+                "50px": "Small (50px)",
+                "25px": "Extra Small (25px)",
+                "0px": "None (0px)"
+            },
+            "default_value": "75px",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_697570c9f4943",
+            "label": "Padding bottom",
+            "name": "padding_bottom",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "150px": "Extra Large (150px)",
+                "100px": "Large (100px)",
+                "75px": "Medium (75px)",
+                "50px": "Small (50px)",
+                "25px": "Extra Small (25px)",
+                "0px": "None (0px)"
+            },
+            "default_value": "75px",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1769304306
+}

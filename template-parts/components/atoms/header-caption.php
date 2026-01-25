@@ -7,15 +7,17 @@
  * 
  */
 
+$data = $args['data'] ?? null;
+
 ?>
 
-<?php if( isset( $header_caption ) && !empty( $header_caption ) ) : ?>
+<?php if( isset( $data[ 'header_caption' ] ) && !empty( $data[ 'header_caption' ] ) ) : ?>
     <!-- Header caption -->
     <div class="header-caption">
         <div class="header-caption__inner">
-            <p class="header-caption__text">
-                <?php echo esc_html( $header_caption ); ?>
-            </p>
+            <div class="header-caption__content">
+                <?php echo wp_kses_post( $data[ 'header_caption' ] ); ?>
+            </div>
         </div>
     </div>
     <!--End header caption -->

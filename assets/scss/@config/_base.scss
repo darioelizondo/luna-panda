@@ -162,10 +162,10 @@ button:focus {
 .container {
 	
 	margin: 0 auto;
-	width: calc(100% - 24px);
+	width: calc(100% - 48px);
 
 	@include index.m {
-		width: calc(100% - 52px);
+		width: calc(100% - 78px);
 	}
 
 	@include index.l {
@@ -207,7 +207,7 @@ button:focus {
 	height: auto;
 }
 
-.grid-column--12 {
+.grid-columns-l--12 {
 	display: grid;
 
 	@include index.l {

@@ -1,15 +1,30 @@
+@use '../@config/index';
+
 // Header
 .header {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    z-index: 999;
 
     // Inner
     &__inner {
         min-height: 100vh;
+        display: grid;
+        align-items: center;
     }
 
     // Content
     &__content {
+        display: flex;
+        flex-direction: column;
+        gap: index.$lh;
 
+        @include index.l {
+            grid-column: 2 / 7;
+        }
     }
-
-    // Slider
+    
 }

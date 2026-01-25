@@ -1,0 +1,47 @@
+@use '../@config/index';
+
+// Header caption
+.header-caption {
+
+    // Inner
+    &__inner {
+        padding-left: calc( index.$lh * 2 );
+
+        @include index.l {
+            padding-left: calc( index.$lh * 4 );
+        }
+
+        @include index.xl {
+            padding-left: calc( index.$lh * 6 );
+        }
+
+        @include index.xxl {
+            padding-left: calc( index.$lh * 7 );
+        }
+
+    }
+
+    // Content
+    &__content p {
+        color: index.$primary;
+        font-size: 16px;
+        line-height: 22px;
+
+        @include index.l {
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+        @include index.xl {
+            font-size: 22px;
+            line-height: 28px;
+        }
+
+        @include index.xxl {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+    }
+
+}
