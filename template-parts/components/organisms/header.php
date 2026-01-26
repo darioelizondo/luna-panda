@@ -20,8 +20,13 @@
     <div class="header__inner container grid-columns-l--12">
         <!-- Content -->
         <div class="header__content">
-            <div class="header__logo">
-                <?php get_template_part( 'template-parts/components/atoms/logo' ); ?>
+            <div class="header__logo-hamburger">
+                <div class="header__logo">
+                    <?php get_template_part( 'template-parts/components/atoms/logo' ); ?>
+                </div>
+                <div class="header__hamburger-icon">
+                    <?php get_template_part( 'template-parts/components/atoms/hamburger-icon' ); ?>
+                </div>
             </div>
             <div class="header__caption">
                 <?php

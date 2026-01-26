@@ -4,4 +4,10 @@
 .hero {
     height: 100vh;
     pointer-events: none;
+    visibility: hidden;
+
+    @include index.l {
+        visibility: visible;
+    }
+
 }

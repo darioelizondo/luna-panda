@@ -9,11 +9,14 @@
 // Atoms
 @use 'atoms/logo';
 @use 'atoms/header-caption';
+@use 'atoms/hamburger-icon';
 
 // Molecules
 @use 'molecules/main-slider';
+@use 'molecules/menu';
 
 
 // Organisms
 @use 'organisms/loader';
 @use 'organisms/header';
+@use 'organisms/hero';

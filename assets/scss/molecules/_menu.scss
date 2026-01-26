@@ -1,0 +1,109 @@
+@use '../@config/index';
+
+// Menu
+.menu {
+    overflow: hidden;
+    transition: transform .5s ease;
+
+    @include index.l {
+        display: block;
+        position: static;
+        height: auto;
+    }
+
+    &.active {
+        transform: translateX(0);
+    }
+
+    // Inner
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    // Wrapper
+    &__wrapper {
+        width: 100%;
+    }
+
+    // Navigation
+    &__nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        gap: calc( index.$lh / 12 );
+        list-style: none;
+        // padding-left: calc( index.$lh * 2 );
+
+        @include index.l {
+            padding-left: calc( index.$lh * 4 );
+        }
+
+        @include index.xl {
+            padding-left: calc( index.$lh * 6 );
+        }
+
+        @include index.xxl {
+            padding-left: calc( index.$lh * 7 );
+        }
+
+    }
+
+    // Item
+    &__item {
+        margin-bottom: index.$lh;
+    }
+
+    // Link
+    &__link {
+        display: block;
+        width: 100%;
+        padding: calc( index.$lh / 3 ) 0;
+        color: index.$primary;
+        font-size: 16px;
+        line-height: 1;
+        font-style: italic;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        transition: color .3s ease;
+       
+            
+        @include index.l {
+            width: auto;
+            padding: calc( index.$lh / 12 ) 0;
+             font-size: 17px;
+        }
+
+        @include index.xl {
+             font-size: 18px;
+        }
+
+        @include index.xxl {
+             font-size: 19px;
+        }
+
+        &:hover {
+            color: index.$white;
+        }
+
+        &:focus,
+        &:focus-within,
+        &:active {
+            background-color: transparent;
+        }
+
+
+    }
+
+    // Menu link title
+    &__link-title {
+        display: inline-block;
+		transition: transform .5s cubic-bezier(.86,0,.07,1);
+    }
+
+}

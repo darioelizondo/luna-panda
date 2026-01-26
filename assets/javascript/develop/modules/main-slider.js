@@ -24,18 +24,18 @@ export const mainSlider = ( root = document ) => {
                     autoplay: {
                         delay: 5500,
                         disableOnInteraction: false,
-                        // reverseDirection: true,
                     },
                     loop: true,
                     // effect: "fade",
+                    watchSlidesProgress: true,
                     effect: 'creative',
                     creativeEffect: {
-                        prev: {
-                            translate: ['100%', 0, 0],
-                        },
-                        next: {
-                            opacity: 0,
-                        },
+                        // prev: {
+                        //     opacity: 0,
+                        // },
+                        // next: {
+                        //     opacity: 0,
+                        // },
                     },
                     // navigation: {
                     //     nextEl: next,
@@ -43,7 +43,7 @@ export const mainSlider = ( root = document ) => {
                     // },
     
                 });
-            }, 3750 )
+            }, 0 ) // 3750
         }
 
     });

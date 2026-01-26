@@ -1,0 +1,54 @@
+@use '../@config/index';
+
+// Hamburger icon
+.hamburger-icon {
+    display: inline-block;
+	@include index.l {
+		display: none;
+	}
+	&__button {
+		width: 18px;
+		height: 18px;
+		position: relative;
+		display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+		transition: transform .5s ease;
+	}
+	&__line {
+		display: inline-block;
+		width: 18px;
+		height: 2px;
+		position: absolute;
+		background: index.$primary;
+		&:nth-of-type(1){ 
+	    	top: 6px;
+	    	transition: top 0.3s ease .3s, transform .3s ease-out .1s;
+	    }
+	    &:nth-of-type(2){ 
+	    	top: 12px;
+	    	transition: opacity 0.3s ease .3s;
+	    }
+	    &:nth-of-type(3){
+	    	top: 18px;
+	    	transition: top 0.3s  ease .3s, transform .3s ease-out .1s ;
+	    }
+	}
+
+	&.active .hamburger-icon__line:nth-of-type(1) {
+		top: 13px;
+		transform: rotate(45deg);
+		transition: top 0.3s ease .1s, transform .3s ease-out .5s ;
+	}
+
+	&.active .hamburger-icon__line:nth-of-type(2) {
+		opacity: 0;
+	}
+
+	&.active .hamburger-icon__line:nth-of-type(3) {
+		top: 13px;
+		transform: rotate(-45deg);
+		transition: top 0.3s ease .1s, transform .3s ease-out .5s;
+	}
+}
