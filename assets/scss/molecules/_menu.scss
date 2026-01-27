@@ -32,23 +32,16 @@
     &__nav {
         width: 100%;
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        // justify-content: space-between;
         margin: 0;
-        gap: calc( index.$lh / 12 );
+        gap: index.$lh;
         list-style: none;
-        // padding-left: calc( index.$lh * 2 );
 
         @include index.l {
-            padding-left: calc( index.$lh * 4 );
-        }
-
-        @include index.xl {
-            padding-left: calc( index.$lh * 6 );
-        }
-
-        @include index.xxl {
-            padding-left: calc( index.$lh * 7 );
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: calc( index.$lh / 8 );
         }
 
     }
@@ -69,7 +62,6 @@
         font-style: italic;
         text-decoration: none;
         position: relative;
-        overflow: hidden;
         transition: color .3s ease;
        
             
@@ -98,6 +90,37 @@
         }
 
 
+    }
+
+     // Active element
+    .current_page_item {
+
+        .menu__link {
+            color: index.$white;
+        }
+
+        .menu__link:before  {            
+            @include index.l {
+                content: '☜';
+                position: absolute;
+                top: 10px;
+                right: -25px;
+                font-size: 16px;
+                line-height: 1;
+                top: 4px;
+                right: -30px;
+                font-size: 17px;
+            }
+
+            @include index.xl {
+                font-size: 18px;
+            }
+
+            @include index.xxl {
+                font-size: 19px;
+            }
+
+        }
     }
 
     // Menu link title

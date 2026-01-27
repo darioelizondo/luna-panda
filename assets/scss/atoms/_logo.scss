@@ -23,6 +23,8 @@
     &__isotype {
         width: 75px;
         height: auto;
+        display: inline-flex;
+        will-change: transform;
 
         @include index.m {
             width: 90px;
@@ -46,6 +48,7 @@
     &__logotype {
         width: 250px;
         height: auto;
+        will-change: opacity;
 
         @include index.m {
             width: 350px;

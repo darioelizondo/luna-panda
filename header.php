@@ -28,19 +28,19 @@
     <body <?php body_class(); ?>>
 
         <!-- Loader -->
-        <!-- <div class="loader">
+        <div class="loader">
             <div id="gif-loader" class="loader__wrapper-gif">
-                <img class="loader__gif image--fluid" src="<?php // echo TDU . '/assets/images/loading/loading.gif'; ?>">
-                Counter 
+                <img class="loader__gif image--fluid" src="<?php echo TDU . '/assets/images/loading/loading.gif'; ?>">
+                <!-- Counter  -->
                 <div class="loader__counter">
                     <span data-loader-percent>0%</span>
                 </div>
             </div>
             <canvas id="burn-canvas"></canvas>
-        </div> -->
+        </div>
         <!-- End loader -->
 
         <?php include TD . '/template-parts/components/organisms/header.php'; ?>
 
         <div data-barba="wrapper" class="site-wrapper">
-            <main class="main" data-barba="container" data-barba-namespace="<?php echo esc_attr( get_post_type() ?: 'page' ); ?>">
+            <main class="main" data-barba="container" data-barba-namespace="<?php echo is_front_page() ? 'home' : 'inner'; ?>">

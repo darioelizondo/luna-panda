@@ -1,6 +1,6 @@
 // app.js
 import './loader';
-import './page-transition';
+import './app-barba';
 
 // Modules UI
 import { mainSlider } from './modules/main-slider';

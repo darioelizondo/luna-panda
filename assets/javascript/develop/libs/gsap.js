@@ -1,3 +1,3 @@
-import '../../../third/javascript/gsap.min.js';
+import '../../../third/javascript/gsap/gsap.min.js';
 
 export default window.gsap;
