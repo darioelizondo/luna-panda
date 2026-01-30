@@ -2,6 +2,7 @@ import barba from './libs/barba';
 import gsap from './libs/gsap';
 import { createHeaderController } from './modules/header-controller';
 import { bindHeaderToScroll } from './modules/header-scroll';
+import { playLogoIntro } from './modules/logo-intro';
 
 const AppBarba = () => {
 
@@ -49,6 +50,42 @@ const AppBarba = () => {
   };
 
   initHeaderOnce();
+
+    // ---------------------------
+    // Logo Intro (first load only, when the loader finishes)
+    // ---------------------------
+    const runLogoIntroOnce = () => {
+      if ( runLogoIntroOnce._played ) return;
+      runLogoIntroOnce._played = true;
+
+      // Current namespace (first load can be home or inner)
+      const ns = container.getAttribute('data-barba-namespace') || 'default';
+
+      // 1) Force expanded so that the full logo is visible during the intro (including mobile)
+      headerCtrl?.setCompact(false, { immediate: true });
+
+      // 2) Run intro
+      const tl = playLogoIntro();
+
+      // 3) Upon is complete, apply the actual status according to the page.
+      const applyFinalState = () => {
+        if (ns === 'home') {
+          headerCtrl?.setCompact(false, { immediate: true }); // Expanded
+        } else {
+          headerCtrl?.setCompact(true); // Compact (smooth)
+        }
+      };
+
+      if (tl) tl.eventCallback('onComplete', applyFinalState);
+      else applyFinalState();
+    };
+
+    // If the loader has already finished before Barba initializes, run it anyway:
+    if (window.__LOADER_DONE__) {
+      runLogoIntroOnce();
+    } else {
+      window.addEventListener('loader:done', runLogoIntroOnce, { once: true });
+    }
 
   const applyHeaderStateByNamespace = ( namespace ) => {
 

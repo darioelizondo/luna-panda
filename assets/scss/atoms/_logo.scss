@@ -18,6 +18,19 @@
         }
 
     }
+
+    // Masks
+    &__mask {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+    
+    &__isotype,
+    &__logotype{
+        display: inline-block;
+        will-change: transform, opacity;
+    }
     
     // Isotype
     &__isotype {
@@ -34,8 +47,12 @@
             width: 110px;
         }
 
+        @include index.e {
+            width: 115px;
+        }
+
         @include index.xl {
-            width: 125px;
+            width: 120px;
         }
 
         @include index.xxl {
@@ -55,11 +72,15 @@
         }
 
         @include index.l {
-            width: 450px;
+            width: 370px;
+        }
+
+        @include index.e {
+            width: 470px;
         }
 
         @include index.xl {
-            width: 550px;
+            width: 530px;
         }
 
         @include index.xxl {

@@ -48,34 +48,6 @@ export const createHeaderController = () => {
         
     };
 
-
-    // Desktop: Shrinking everything together
-    mm.add( '(min-width: 768px)', () => {
-
-        const tl = buildTimeline();
-
-        tl
-        .to( logo, {
-            scale: 0.20, duration: 0.25
-        }, 0)
-        .to( menu, {
-            // scale: 0.75,
-            y: -265,
-            paddingLeft: '0px',
-            duration: 0.2,
-            stagger: 0.03,
-            onStart: () => menu.forEach( el => ( el.style.pointerEvents = 'auto') ),
-        }, 0.05);
-
-        // Just in case, we've made sure the text is visible on desktop.
-        if ( logotype ) tl.set( logotype, { autoAlpha: 1, clearProps: 'width' }, 0);
-
-        // If you were already compact, reapply the unanimated state
-        if ( isCompact ) tl.progress( 1 ).pause();
-
-        return () => {};
-    });
-
     // Mobile: Hide logo (text) when compacting
     mm.add( '(max-width: 767px)', () => {
 
@@ -83,12 +55,14 @@ export const createHeaderController = () => {
 
         tl
         .to( logo, {
-            scale: 0.55, duration: 0.25
+            scale: 0.55,
+            y: -35,
+            duration: 0.25
         }, 0 )
         .to( menu, {
             scale: 0.85,
             x: 75,
-            y: -247,
+            y: -290,
             duration: 0.25,
             stagger: 0.03,
             onStart: () => menu.forEach( el => ( el.style.pointerEvents = 'auto') ),
@@ -112,6 +86,126 @@ export const createHeaderController = () => {
         return () => {};
 
     });
+
+
+    // Desktop: Max 1280px an min 1024px
+    mm.add( '(min-width: 1024px)', () => {
+
+        const tl = buildTimeline();
+
+        tl
+        .to( logo, {
+            scale: 0.25,
+            y: -190,
+            duration: 0.25
+        }, 0)
+        .to( menu, {
+            // scale: 0.75,
+            y: -390,
+            paddingLeft: '0px',
+            duration: 0.2,
+            stagger: 0.03,
+            onStart: () => menu.forEach( el => ( el.style.pointerEvents = 'auto') ),
+        }, 0.05);
+
+        // Just in case, we've made sure the text is visible on desktop.
+        if ( logotype ) tl.set( logotype, { autoAlpha: 1, clearProps: 'width' }, 0);
+
+        // If you were already compact, reapply the unanimated state
+        if ( isCompact ) tl.progress( 1 ).pause();
+
+        return () => {};
+    });
+
+    // Desktop: Max 1400px an min 1280px
+    mm.add( '(min-width: 1280px)', () => {
+
+        const tl = buildTimeline();
+
+        tl
+        .to( logo, {
+            scale: 0.20,
+            y: -215,
+            duration: 0.25
+        }, 0)
+        .to( menu, {
+            // scale: 0.75,
+            y: -435,
+            paddingLeft: '0px',
+            duration: 0.2,
+            stagger: 0.03,
+            onStart: () => menu.forEach( el => ( el.style.pointerEvents = 'auto') ),
+        }, 0.05);
+
+        // Just in case, we've made sure the text is visible on desktop.
+        if ( logotype ) tl.set( logotype, { autoAlpha: 1, clearProps: 'width' }, 0);
+
+        // If you were already compact, reapply the unanimated state
+        if ( isCompact ) tl.progress( 1 ).pause();
+
+        return () => {};
+    });
+
+    
+    // Desktop: Max 1700px an min 1440px
+    mm.add( '(min-width: 1440px)', () => {
+
+        const tl = buildTimeline();
+
+        tl
+        .to( logo, {
+            scale: 0.20,
+            y: -230,
+            duration: 0.25
+        }, 0)
+        .to( menu, {
+            // scale: 0.75,
+            y: -470,
+            paddingLeft: '0px',
+            duration: 0.2,
+            stagger: 0.03,
+            onStart: () => menu.forEach( el => ( el.style.pointerEvents = 'auto') ),
+        }, 0.05);
+
+        // Just in case, we've made sure the text is visible on desktop.
+        if ( logotype ) tl.set( logotype, { autoAlpha: 1, clearProps: 'width' }, 0);
+
+        // If you were already compact, reapply the unanimated state
+        if ( isCompact ) tl.progress( 1 ).pause();
+
+        return () => {};
+    });
+
+
+    // Desktop: +1700px
+    mm.add( '(min-width: 1700px)', () => {
+
+        const tl = buildTimeline();
+
+        tl
+        .to( logo, {
+            scale: 0.20,
+            y: -250,
+            duration: 0.25
+        }, 0)
+        .to( menu, {
+            // scale: 0.75,
+            y: -520,
+            paddingLeft: '0px',
+            duration: 0.2,
+            stagger: 0.03,
+            onStart: () => menu.forEach( el => ( el.style.pointerEvents = 'auto') ),
+        }, 0.05);
+
+        // Just in case, we've made sure the text is visible on desktop.
+        if ( logotype ) tl.set( logotype, { autoAlpha: 1, clearProps: 'width' }, 0);
+
+        // If you were already compact, reapply the unanimated state
+        if ( isCompact ) tl.progress( 1 ).pause();
+
+        return () => {};
+    });
+
 
     const setCompact = ( next, { immediate = false } = {}) => {
 

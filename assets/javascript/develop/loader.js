@@ -178,20 +178,26 @@ const loader = () => {
         }
 
         function animate(now) {
-        const tSec = (now - start) / 1000;
-        const rawProgress = Math.min(tSec / DURATION, 1.0);
-        const easedProgress = easeInOutCubic(rawProgress);
+            const tSec = (now - start) / 1000;
+            const rawProgress = Math.min(tSec / DURATION, 1.0);
+            const easedProgress = easeInOutCubic(rawProgress);
 
-        material.uniforms.u_time.value = tSec;
-        material.uniforms.u_progress.value = easedProgress;
+            material.uniforms.u_time.value = tSec;
+            material.uniforms.u_progress.value = easedProgress;
 
-        renderer.render(scene, camera);
+            renderer.render(scene, camera);
 
-        if (rawProgress < 1.0) {
-            requestAnimationFrame(animate);
-        } else {
-            loaderEl.classList.add('is-done');
-        }
+            if (rawProgress < 1.0) {
+                requestAnimationFrame(animate);
+            } else {
+                loaderEl.classList.add('is-done');
+
+                // Notify the rest of the site that the loader has finished
+                window.__LOADER_DONE__ = true;
+                window.dispatchEvent( new CustomEvent( 'loader:done' ) );
+                console.log('[Loader] DONE event fired'); // ✅ debug
+
+            }
         }
 
         requestAnimationFrame(animate);
