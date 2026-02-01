@@ -43,7 +43,7 @@ export const mainSlider = ( root = document ) => {
                     // },
     
                 });
-            }, 0 ) // 3750
+            }, 3750 ) // 3750
         }
 
     });

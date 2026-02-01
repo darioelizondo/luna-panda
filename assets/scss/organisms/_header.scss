@@ -25,7 +25,13 @@
 
         @include index.l {
             grid-column: 2 / 7;
+            gap: calc( index.$lh / 2 );
         }
+
+        @include index.xl {
+           gap: index.$lh;
+        }
+
     }
 
     // Logo and Hamburger wrapper

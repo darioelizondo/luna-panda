@@ -11,10 +11,12 @@
 
         @include index.l {
             gap: calc( index.$lh * 1.5 );
+            gap: calc( index.$lh / 2 );
         }
 
         @include index.xl {
             gap: calc( index.$lh * 2 );
+            gap: index.$lh;
         }
 
     }
@@ -44,7 +46,7 @@
         }
 
         @include index.l {
-            width: 110px;
+            width: 95px;
         }
 
         @include index.e {
@@ -72,7 +74,7 @@
         }
 
         @include index.l {
-            width: 370px;
+            width: 350px;
         }
 
         @include index.e {

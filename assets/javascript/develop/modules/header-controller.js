@@ -117,8 +117,37 @@ export const createHeaderController = () => {
         return () => {};
     });
 
-    // Desktop: Max 1400px an min 1280px
-    mm.add( '(min-width: 1280px)', () => {
+    // Desktop: Max 1350px an min 1170px
+    mm.add( '(min-width: 1170px)', () => {
+
+        const tl = buildTimeline();
+
+        tl
+        .to( logo, {
+            scale: 0.25,
+            y: -150,
+            duration: 0.25
+        }, 0)
+        .to( menu, {
+            // scale: 0.75,
+            y: -300,
+            paddingLeft: '0px',
+            duration: 0.2,
+            stagger: 0.03,
+            onStart: () => menu.forEach( el => ( el.style.pointerEvents = 'auto') ),
+        }, 0.05);
+
+        // Just in case, we've made sure the text is visible on desktop.
+        if ( logotype ) tl.set( logotype, { autoAlpha: 1, clearProps: 'width' }, 0);
+
+        // If you were already compact, reapply the unanimated state
+        if ( isCompact ) tl.progress( 1 ).pause();
+
+        return () => {};
+    });
+
+    // Desktop: Max 1440px an min 1350px
+    mm.add( '(min-width: 1350px)', () => {
 
         const tl = buildTimeline();
 
