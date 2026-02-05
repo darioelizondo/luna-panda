@@ -13,13 +13,17 @@
 
 <?php if( isset( $projects_home ) && !empty( $projects_home ) ) : ?>
     <!-- Projects home -->
-    <div class="projects-home">
+    <section class="projects-home">
         <div class="projects-home__inner container grid-columns-l--12">
-            <?php foreach( $projects_home as $item_project ) : ?>
-                <?php   
+            <?php foreach( $projects_home[ 'items' ] as $item_project ) : ?>
+                <?php 
+                    $span  = !empty( $item_project['col_span'] ) ? (int) $item_project[ 'col_span' ] : 10;
+                    $start = !empty( $item_project['col_start'] ) ? $item_project[ 'col_start' ] : 'auto';
                     // Data item project
                     $data_item_project = array(
                         'item_project' => $item_project,
+                        'col_span'     => max( 1, min( 10, $span ) ),
+                        'col_span_mobile'  => ($mspan === 1 ? 1 : 2),
                     );
                     
                     // Item project home
@@ -27,6 +31,6 @@
                 ?>
             <?php endforeach; ?>
         </div>
-    </div>
+    </section>
     <!-- End projects home -->
 <?php endif; ?>

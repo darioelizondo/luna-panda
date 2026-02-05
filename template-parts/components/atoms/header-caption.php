@@ -15,9 +15,9 @@ $data = $args['data'] ?? null;
     <!-- Header caption -->
     <div class="header-caption">
         <div class="header-caption__inner">
-            <div class="header-caption__content">
+            <h1 class="header-caption__content">
                 <?php echo wp_kses_post( $data[ 'header_caption' ] ); ?>
-            </div>
+            </h1>
         </div>
     </div>
     <!--End header caption -->

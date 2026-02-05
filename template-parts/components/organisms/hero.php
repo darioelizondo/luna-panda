@@ -20,7 +20,7 @@
 
 <?php if( isset( $hero ) && !empty( $hero ) ) : ?>
     <!-- Hero -->
-    <div class="hero <?php echo 'module-' . $module_count; ?>">
+    <section class="hero <?php echo 'module-' . $module_count; ?>">
         <div class="hero__inner">
             <!-- Slider -->
             <div class="header__slider">
@@ -33,7 +33,7 @@
             </div>
             <!-- End contact -->
         </div>
-    </div>
+    </section>
     <!-- End hero -->
  <?php endif; ?>
 

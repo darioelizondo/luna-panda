@@ -7,13 +7,17 @@
      * 
      */
 
-    $data = $args['data'] ?? null;
+    $data  = $args['data'] ?? null;
+    $span  = $data['col_span'] ?? 10;
+    $mspan = $data['col_span_mobile'] ?? 2;
+
+    $style = '--span:' . (int)$span . '; --m-span:' . (int)$mspan . ';';
 
 ?>
 
 <?php if( isset( $data[ 'item_project' ] ) && !empty( $data[ 'item_project' ] ) ) : ?>
     <!-- Item project home -->
-    <div class="item-project-home">
+    <div class="item-project-home" style="<?php echo esc_attr($style); ?>">
         <div class="item-project-home__inner">
             <?php 
                 // Image project home

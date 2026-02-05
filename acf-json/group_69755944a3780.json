@@ -7,7 +7,7 @@
             "label": "Header caption",
             "name": "header_caption",
             "aria-label": "",
-            "type": "wysiwyg",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,11 +17,11 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
         },
         {
             "key": "field_697559fb21240",
@@ -60,5 +60,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1769298464
+    "modified": 1770266648
 }
