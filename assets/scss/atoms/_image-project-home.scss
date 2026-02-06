@@ -1,0 +1,29 @@
+@use '../@config/index';
+
+// Image project home
+.image-project-home {
+    display: block;
+    font-size: 0;
+    line-height: 1;
+    overflow: visible;
+
+    &.active .image-project-home__image {
+        transform: scale( 1.1 );
+    }
+
+    // Picture
+    &__picture {
+        font-size: 0;
+        line-height: 1;
+    }
+
+    // Image
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        will-change: transform;
+    }
+
+}

@@ -1,0 +1,31 @@
+@use '../@config/index';
+
+// Item project home
+.item-project-home {
+    grid-column: var(--m-start) / span var(--m-span, 2);
+    transform: translate(var(--oxm, 0px), var(--oym, 0px));
+    position: relative;
+    z-index: var(--zi, 0);
+    will-change: transform;
+
+    @include index.l {
+        grid-column: var(--start) / span var(--span, 10);
+        transform: translate(var(--ox, 0px), var(--oy, 0px));
+    }
+
+    &:hover .content-project-home {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+
+    &:hover .image-project-home__image {
+        transform: scale( 1.05 );
+    }
+
+    // Inner
+    &__inner {
+        position: relative;
+        will-change: transform;
+    }
+
+}

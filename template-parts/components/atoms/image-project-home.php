@@ -8,19 +8,23 @@
      */
 
     $data = $args['data'] ?? null;
+    $data_item_project = $data['item_project'] ?? null;
+
+    // print_r($data_item_project);
 
 ?>
 
-<?php if( isset( $data[ 'item_project' ][ 'image_project' ] ) && !empty( $data[ 'item_project' ][ 'image_project' ] ) ) : ?>
+<?php if( isset( $data_item_project[ 'item_project' ][ 'image_project' ] ) && !empty( $data_item_project[ 'item_project' ][ 'image_project' ] ) ) : ?>
     <!-- Image project home  -->
-    <a href="<?php echo esc_attr( $data[ 'item_project' ][ 'image_project' ][ 'link' ] ) ?>" class="image-project-home">
-        <picture class="image-project-home__content">
-            <source media="(min-width: 1024px)" srcset="<?php echo esc_url( $data[ 'item_project' ][ 'image_xl' ]['url'] ); ?>" />
+    <a href="<?php echo esc_attr( $data_item_project[ 'item_project' ][ 'image_project' ][ 'link' ] ) ?>" class="image-project-home">
+        <picture class="image-project-home__picture">
+            <source media="(min-width: 1024px)" srcset="<?php echo esc_url( $data_item_project[ 'item_project' ][ 'image_project' ][ 'image_xl' ]['url'] ); ?>" />
             <img 
-                src="<?php echo esc_url( $data[ 'item_project' ][ 'image_project' ][ 'image_sm' ]['url'] ); ?>" 
-                alt="<?php echo esc_attr( $data[ 'item_project' ][ 'image_project' ][ 'image_sm' ]['alt'] ); ?>" 
-                width="<?php echo esc_attr( $data[ 'item_project' ][ 'image_project' ][ 'image_sm' ]['width'] ); ?>" 
-                height="<?php echo esc_attr( $data[ 'item_project' ][ 'image_project' ][ 'image_sm' ]['height'] ); ?>"
+                class="image-project-home__image image--fluid"
+                src="<?php echo esc_url( $data_item_project[ 'item_project' ][ 'image_project' ][ 'image_sm' ]['url'] ); ?>" 
+                alt="<?php echo esc_attr( $data_item_project[ 'item_project' ][ 'image_project' ][ 'image_sm' ]['alt'] ); ?>" 
+                width="<?php echo esc_attr( $data_item_project[ 'item_project' ][ 'image_project' ][ 'image_sm' ]['width'] ); ?>" 
+                height="<?php echo esc_attr( $data_item_project[ 'item_project' ][ 'image_project' ][ 'image_sm' ]['height'] ); ?>"
             />
         </picture>
     </a>

@@ -14,9 +14,8 @@
 
     if ( have_rows( 'modules' ) ) : while ( have_rows( 'modules' ) ) : the_row( 'modules' );
      
-        if ( get_row_layout() === 'hero' )           require TD . '/template-parts/components/organisms/hero.php';
-
-        echo '<div style="width: 100%; height: 2000px;" ></div>';
+        if ( get_row_layout() === 'hero' )                    require TD . '/template-parts/components/organisms/hero.php';
+        if ( get_row_layout() === 'projects_home' )           require TD . '/template-parts/components/organisms/projects-home.php';
      
         $module_count++;
      

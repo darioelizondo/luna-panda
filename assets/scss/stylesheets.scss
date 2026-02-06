@@ -10,13 +10,17 @@
 @use 'atoms/logo';
 @use 'atoms/header-caption';
 @use 'atoms/hamburger-icon';
+@use 'atoms/image-project-home';
+@use 'atoms/content-project-home';
 
 // Molecules
 @use 'molecules/main-slider';
 @use 'molecules/menu';
+@use 'molecules/item-project-home';
 
 
 // Organisms
 @use 'organisms/loader';
 @use 'organisms/header';
 @use 'organisms/hero';
+@use 'organisms/projects-home';

@@ -48,6 +48,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_69850d12ce27b": {
+                    "key": "layout_69850d12ce27b",
+                    "name": "projects_home",
+                    "label": "Projects home",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_69850d1cce27e",
+                            "label": "Projects home",
+                            "name": "projects_home",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_69841bf593173"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -78,5 +110,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1769307281
+    "modified": 1770327349
 }

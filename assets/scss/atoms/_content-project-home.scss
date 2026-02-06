@@ -1,0 +1,113 @@
+@use '../@config/index';
+
+// Content project home
+.content-project-home {
+    opacity: 0;
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    max-width: 250px;
+    transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1), transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    will-change: opacity, transform;
+
+    &.active {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+
+    @include index.l {
+        bottom: 50px;
+        max-width: 270px;
+    }
+
+    @include index.xl {
+        max-width: 300px;
+    }
+
+    @include index.xxl {
+        bottom: 75px;
+        max-width: 350px;
+    }
+
+
+    // Inner
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: calc( index.$lh / 2 );
+    }
+
+    // Title
+    &__title {
+        color: index.$soft-primary;
+        font-size: 15px;
+        line-height: 21px;
+        font-style: italic;
+
+        @include index.l {
+            font-size: 17px;
+            line-height: 23px;
+        }
+
+        @include index.xl {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        @include index.xxl {
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+
+    }
+    
+
+    // Subtitle
+    &__subtitle {
+        color: index.$soft-primary;
+        font-size: 14px;
+        line-height: 20px;
+        font-style: italic;
+
+        @include index.l {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        @include index.xl {
+            font-size: 17px;
+            line-height: 23px;
+        }
+
+        @include index.xxl {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+    }
+
+    &__text,
+    &__text p {
+        color: index.$soft-primary;
+        font-size: 13px;
+        line-height: 18px;
+        font-style: italic;
+
+        @include index.l {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        @include index.xl {
+            font-size: 15px;
+            line-height: 21px;
+        }
+
+        @include index.xxl {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+}

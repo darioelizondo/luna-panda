@@ -7,7 +7,16 @@
     height: auto;
     top: 100px;
     left: 0;
-    z-index: 999;    
+    z-index: 999;
+    pointer-events: none;
+
+    // Manage pointer events
+    & a,
+    & button,
+    & input,
+    & .is-clickeable {
+        pointer-events: auto;
+    }
 
     // Inner
     &__inner {
@@ -40,6 +49,7 @@
         justify-content: space-between;
         gap: index.$lh;
         align-items: center;
+        height: auto;
     }
 
     // Hamburger icon

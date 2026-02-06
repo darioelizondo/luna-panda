@@ -260,6 +260,290 @@
                                             "preview_size": "medium"
                                         }
                                     ]
+                                },
+                                {
+                                    "key": "field_6984fd1f76c3e",
+                                    "label": "Layout",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "left",
+                                    "endpoint": 0,
+                                    "selected": 0
+                                },
+                                {
+                                    "key": "field_6984fd4776c3f",
+                                    "label": "Column start mobile",
+                                    "name": "col_start_mobile",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "Select the start column in mobile",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "1": "1",
+                                        "2": "2"
+                                    },
+                                    "default_value": 1,
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui": 1,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "create_options": 0,
+                                    "save_options": 0
+                                },
+                                {
+                                    "key": "field_6984fe4676c40",
+                                    "label": "Column span mobile",
+                                    "name": "col_span_mobile",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "Select how many columns to span",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "1": "1",
+                                        "2": "2"
+                                    },
+                                    "default_value": false,
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui": 1,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "create_options": 0,
+                                    "save_options": 0
+                                },
+                                {
+                                    "key": "field_6984fed976c42",
+                                    "label": "Column start",
+                                    "name": "col_start",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "Select the start column in desktop",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "1": "1",
+                                        "2": "2",
+                                        "3": "3",
+                                        "4": "4",
+                                        "5": "5",
+                                        "6": "6",
+                                        "7": "7",
+                                        "8": "8",
+                                        "9": "9",
+                                        "10": "10",
+                                        "11": "11"
+                                    },
+                                    "default_value": 1,
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui": 1,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "create_options": 0,
+                                    "save_options": 0
+                                },
+                                {
+                                    "key": "field_6984ff4376c43",
+                                    "label": "Column span",
+                                    "name": "col_span",
+                                    "aria-label": "",
+                                    "type": "select",
+                                    "instructions": "Select how many columns to span",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "1": "1",
+                                        "2": "2",
+                                        "3": "3",
+                                        "4": "4",
+                                        "5": "5",
+                                        "6": "6",
+                                        "7": "7",
+                                        "8": "8",
+                                        "9": "9",
+                                        "10": "10"
+                                    },
+                                    "default_value": false,
+                                    "return_format": "value",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "allow_in_bindings": 0,
+                                    "ui": 1,
+                                    "ajax": 0,
+                                    "placeholder": "",
+                                    "create_options": 0,
+                                    "save_options": 0
+                                },
+                                {
+                                    "key": "field_69850bc576c44",
+                                    "label": "Position",
+                                    "name": "",
+                                    "aria-label": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "left",
+                                    "endpoint": 0,
+                                    "selected": 0
+                                },
+                                {
+                                    "key": "field_69850c6176c47",
+                                    "label": "Offset X Mobile",
+                                    "name": "offset_x_m",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Set a value between -250 and 250 px",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 0,
+                                    "min": -400,
+                                    "max": 400,
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_69850c9676c48",
+                                    "label": "Offset Y Mobile",
+                                    "name": "offset_y_m",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Set a value between -250 and 250 px",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 0,
+                                    "min": -400,
+                                    "max": 400,
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_69850bf476c45",
+                                    "label": "Offset X",
+                                    "name": "offset_x",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Set a value between -400 and 400 px",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 0,
+                                    "min": -400,
+                                    "max": 400,
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_69850c5476c46",
+                                    "label": "Offset Y",
+                                    "name": "offset_y",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Set a value between -400 and 400 px",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 0,
+                                    "min": -400,
+                                    "max": 400,
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_69850caa76c4a",
+                                    "label": "Z index",
+                                    "name": "z_index",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Set a value between 0 and 20. This is for overlay items.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 0,
+                                    "min": -400,
+                                    "max": 400,
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": ""
                                 }
                             ],
                             "parent_repeater": "field_69841c2858a82"
@@ -293,5 +577,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770266219
+    "modified": 1770327290
 }
