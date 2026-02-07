@@ -1,51 +1,57 @@
 import Swiper from '../libs/swiper';
 
-export const mainSlider = ( root = document ) => {
+export const mainSlider = (root = document) => {
+  const sliders = root.querySelectorAll('[data-main-slider]');
+  if (!sliders.length) return null;
 
-    const mainSliders = document.querySelectorAll( '[data-main-slider]' );
+  const instances = [];
 
-    // Guards
-    if ( !mainSliders ) return;
+  sliders.forEach((slider) => {
+    const currentSlider = slider.querySelector('.main-slider__inner.swiper');
+    if (!currentSlider) return;
 
-    mainSliders.forEach( ( slider ) => {
+    let swiper = null;
 
-        // More guards
-        if (slider.dataset.inited === 'true') return;
-        slider.dataset.inited = 'true';
+    const init = () => {
+      swiper = new Swiper(currentSlider, {
+        speed: 3000,
+        autoplay: {
+          delay: 5500,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        watchSlidesProgress: true,
+        effect: 'creative',
+        creativeEffect: {},
+      });
 
-        const currentSlider = slider.querySelector( '.main-slider__inner.swiper' );
-        // const next = slider.querySelector( '.main-slider__next' );
-        // const prev = slider.querySelector( '.main-slider__prev' );
+      instances.push(swiper);
+    };
 
-        if( currentSlider !== undefined ) {
-            setTimeout( () => {
-                swiper = new Swiper( currentSlider, {
-                    speed: 3000,
-                    autoplay: {
-                        delay: 5500,
-                        disableOnInteraction: false,
-                    },
-                    loop: true,
-                    // effect: "fade",
-                    watchSlidesProgress: true,
-                    effect: 'creative',
-                    creativeEffect: {
-                        // prev: {
-                        //     opacity: 0,
-                        // },
-                        // next: {
-                        //     opacity: 0,
-                        // },
-                    },
-                    // navigation: {
-                    //     nextEl: next,
-                    //     prevEl: prev,
-                    // },
-    
-                });
-            }, 3750 ) // 3750
+    // Delay for "Loader animation"
+    const timeout = setTimeout(init, 3750);
+
+    // We keep a reference to clear the timeout if it is destroyed before it is destroyed.
+    slider.__mainSliderTimeout = timeout;
+  });
+
+  return {
+    destroy() {
+      sliders.forEach((slider) => {
+        // Clear timeout if it did not initialize
+        if (slider.__mainSliderTimeout) {
+          clearTimeout(slider.__mainSliderTimeout);
+          delete slider.__mainSliderTimeout;
         }
+      });
 
-    });
+      instances.forEach((swiper) => {
+        if (swiper && !swiper.destroyed) {
+          swiper.destroy(true, true);
+        }
+      });
 
+      instances.length = 0;
+    },
+  };
 };
