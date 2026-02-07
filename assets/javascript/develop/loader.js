@@ -195,7 +195,6 @@ const loader = () => {
                 // Notify the rest of the site that the loader has finished
                 window.__LOADER_DONE__ = true;
                 window.dispatchEvent( new CustomEvent( 'loader:done' ) );
-                console.log('[Loader] DONE event fired'); // ✅ debug
 
             }
         }

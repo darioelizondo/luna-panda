@@ -28,7 +28,7 @@
 
 <?php if( isset( $data[ 'item_project' ] ) && !empty( $data[ 'item_project' ] ) ) : ?>
     <!-- Item project home -->
-    <div class="item-project-home" style="<?php echo esc_attr($style); ?>">
+    <div class="item-project-home" style="<?php echo esc_attr($style); ?>" data-span="<?php echo esc_attr((int)($span ?? 10)); ?>">
         <div class="item-project-home__inner item-project-home--motion">
             <?php 
                 // Image project home

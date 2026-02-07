@@ -4,6 +4,7 @@ import { createHeaderController } from './modules/header-controller';
 import { bindHeaderToScroll } from './modules/header-scroll';
 import { playLogoIntro } from './modules/logo-intro';
 import { projectHomeTouchHover } from './modules/content-project-home';
+import { initProjectsParallax } from "./modules/projects-parallax-home";
 
 const AppBarba = () => {
   const wrapper = document.querySelector('[data-barba="wrapper"]');
@@ -126,11 +127,26 @@ const AppBarba = () => {
     }
   };
 
+  // Projects Parallax homepage
+  let destroyProjectsParallax = null;
+
+
   // Barba Init
   barba.init({
     transitions: [
       {
         name: 'fade',
+
+        once({ next }) {
+          destroyProjectsParallax = initProjectsParallax(next.container);
+
+          //If there are images that load after and change height
+          window.setTimeout(() => {
+            // ScrollTrigger.refresh() is called in "init", but this helps
+            // eslint-disable-next-line no-undef
+            if (window.ScrollTrigger) window.ScrollTrigger.refresh?.();
+          }, 250);
+        },
 
         beforeEnter(data) {
           // 1. Define the class that WordPress uses for the active element
@@ -153,8 +169,16 @@ const AppBarba = () => {
         },
 
         beforeLeave(data) {
+
+          // Header controller
           if (data?.current?.namespace === 'home') {
             headerCtrl?.setCompact(true); // Animated
+          }
+
+          // Projects Parallax homepage
+          if (typeof destroyProjectsParallax === "function") {
+            destroyProjectsParallax();
+            destroyProjectsParallax = null;
           }
         },
 
@@ -195,7 +219,7 @@ const AppBarba = () => {
 
   // Hooks (site logic)
   barba.hooks.beforeLeave(({ current }) => {
-    // ✅ Destroy module to avoid duplicated listeners
+    // Destroy module to avoid duplicated listeners
     destroyProjectHomeTouch();
 
     // Your existing destroy
@@ -206,18 +230,17 @@ const AppBarba = () => {
     // Re-init de scripts dependientes del DOM
     window.App?.init?.(next.container);
 
-    // ✅ Init module scoped to the NEW container
-    // (Si querés solo en Home, abajo te dejo la condición)
+    // Init module scoped to the NEW container
     initProjectHomeTouch(next.container);
+
+    // Projects Parallax after load
+    destroyProjectsParallax = initProjectsParallax(next.container);
 
     // Aplicar header según namespace nuevo (home vs inner)
     const ns =
       next?.namespace || next?.container?.getAttribute('data-barba-namespace') || 'default';
     applyHeaderStateByNamespace(ns);
 
-    // Si querés SOLO en home:
-    // if (ns === 'home') initProjectHomeTouch(next.container);
-    // else destroyProjectHomeTouch();
   });
 };
 
