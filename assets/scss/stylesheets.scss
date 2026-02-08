@@ -8,7 +8,10 @@
 
 // Atoms
 @use 'atoms/logo';
+@use 'atoms/logo-footer';
 @use 'atoms/header-caption';
+@use 'atoms/footer-caption';
+@use 'atoms/footer-social';
 @use 'atoms/hamburger-icon';
 @use 'atoms/image-project-home';
 @use 'atoms/content-project-home';
@@ -24,3 +27,5 @@
 @use 'organisms/header';
 @use 'organisms/hero';
 @use 'organisms/projects-home';
+@use 'organisms/logos-carousel';
+@use 'organisms/footer';

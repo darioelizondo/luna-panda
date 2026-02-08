@@ -1,0 +1,12 @@
+@use '../@config/index';
+
+// Footer social
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: calc( index.$lh * 1.5 );
+
+    @include index.l {
+        gap: index.$lh;
+    }
+}

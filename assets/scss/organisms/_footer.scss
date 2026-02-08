@@ -1,0 +1,57 @@
+@use '../@config/index';
+
+// Footer
+.footer {
+
+    border-top: solid 1px #323232;
+    padding: calc( index.$lh * 1.5 ) 0;
+
+    @include index.l {
+        padding: calc( index.$lh * 2.5 );
+    }
+
+
+    // Inner
+    &__inner {
+        gap: index.$lh
+    }
+
+    // Top
+    &__top {
+        display: flex;
+        gap: index.$lh;
+        justify-content: space-between;
+        align-items: center;
+
+
+        @include index.l {
+            grid-column: 2 / 12;
+        }
+    }
+
+    // Social
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: calc( index.$lh / 2 );
+
+        @include index.l {
+            gap: index.$lh;
+        }
+
+    }
+
+    // Bottom
+    &__bottom {
+        @include index.l {
+            grid-column: 2 / 4;
+        }
+    }
+
+    // Caption
+    &__caption {
+        font-size: 0;
+        line-height: 1;
+    }
+
+}

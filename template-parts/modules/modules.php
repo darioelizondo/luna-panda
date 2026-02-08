@@ -16,6 +16,7 @@
      
         if ( get_row_layout() === 'hero' )                    require TD . '/template-parts/components/organisms/hero.php';
         if ( get_row_layout() === 'projects_home' )           require TD . '/template-parts/components/organisms/projects-home.php';
+        if ( get_row_layout() === 'logos_carousel' )          require TD . '/template-parts/components/organisms/logos-carousel.php';
      
         $module_count++;
      

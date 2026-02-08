@@ -1,0 +1,58 @@
+@use '../@config/index';
+
+// Logos carousel
+.logos-carousel {
+    margin: 80px 0;
+
+    @include index.l {
+        margin: 200px 0;
+        margin-bottom: 100px;
+    }
+
+    @include index.xl {
+        margin: 300px 0;
+        margin-bottom: 100px;
+    }
+
+    @include index.xxl {
+        margin: 400px 0;
+        margin-bottom: 120px;
+    }
+
+    // Inner
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: index.$lh;
+
+        @include index.l {
+            gap: calc( index.$lh * 2 );
+        }
+
+    }
+
+    // Title
+    &__title {
+        color: index.$primary;
+        font-size: 22px;
+        line-height: 26px;
+        text-align: center;
+        
+        @include index.l {
+           font-size: 26px;
+            line-height: 30px;
+        }
+
+        @include index.xl {
+            font-size: 32px;
+            line-height: 36px;
+        }
+
+        @include index.xxl {
+            font-size: 40px;
+            line-height: 44px;
+        }
+
+    }
+
+}

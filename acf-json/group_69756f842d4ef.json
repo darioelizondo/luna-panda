@@ -80,6 +80,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6987bd0f14260": {
+                    "key": "layout_6987bd0f14260",
+                    "name": "logos_carousel",
+                    "label": "Logos carousel",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6987bd1314263",
+                            "label": "Logos carousel",
+                            "name": "logos_carousel",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6987bca76ea5f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -110,5 +142,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770327349
+    "modified": 1770503465
 }

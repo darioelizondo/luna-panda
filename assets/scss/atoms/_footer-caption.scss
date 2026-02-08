@@ -1,0 +1,22 @@
+@use '../@config/index';
+
+// Footer caption
+.footer-caption {
+
+    // Content
+    &__content {
+        color: index.$white;
+        font-size: 11px;
+        line-height: 1;
+
+        @include index.l {
+            font-size: 12px;
+        }
+
+        @include index.xxl {
+            font-size: 13px;
+        }
+
+    }
+
+}

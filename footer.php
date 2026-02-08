@@ -9,7 +9,7 @@
 
 ?>
     
-		  <?php // include TD . '/template-parts/components/organisms/footer.php'; ?>
+		  <?php include TD . '/template-parts/components/organisms/footer.php'; ?>
 
       </main>
     </div>

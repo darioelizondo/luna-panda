@@ -6,9 +6,7 @@ import './app-barba';
 import { mainSlider } from './modules/main-slider';
 import { projectHomeTouchHover } from './modules/content-project-home';
 import { initProjectsParallax } from './modules/projects-parallax-home';
-
-// Si sumás el nuevo carousel:
-// import { logoCarousel } from './modules/logo-carousel';
+import { logosCarousel } from './modules/logos-carousel';
 
 const controllersMap = new WeakMap(); // key: root(container), value: controllers[]
 
@@ -43,8 +41,8 @@ function init(root = document) {
   // Projects parallax (scoped)
   controllers.push(asController(initProjectsParallax(root)));
 
-  // Logo carousel (scoped) - ejemplo
-  // controllers.push(asController(logoCarousel(root)));
+  // Logo carousel
+  controllers.push(asController(logosCarousel(root)));
 
   // Limpieza de nulls
   const cleaned = controllers.filter(Boolean);
