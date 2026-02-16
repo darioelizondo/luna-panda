@@ -49,6 +49,44 @@ export const createHeaderController = () => {
     };
 
     // Mobile: Hide logo (text) when compacting
+    // mm.add( '(max-width: 767px)', () => {
+
+    //     const tl = buildTimeline();
+
+    //     tl
+    //     .to( logo, {
+    //         scale: 0.55,
+    //         y: -35,
+    //         duration: 0.25
+    //     }, 0 )
+    //     .to( menu, {
+    //         scale: 0.85,
+    //         x: 75,
+    //         y: -290,
+    //         duration: 0.25,
+    //         stagger: 0.03,
+    //         onStart: () => menu.forEach( el => ( el.style.pointerEvents = 'auto') ),
+    //     }, 0.05)
+    //     .to( header, {
+    //         top: '20px',
+    //         duration: 0.25,
+    //     }, 0.10 );
+
+    //     // Hide ONLY the logotype on mobile
+    //     if ( logotype ) {
+    //         tl.to( logotype, {
+    //             autoAlpha: 0,
+    //             duration: 0.2,
+    //             onComplete: () => ( logotype.style.pointerEvents = 'none' ),
+    //         }, 0 );
+    //     }
+
+    //     if ( isCompact ) tl.progress(1).pause();
+
+    //     return () => {};
+
+    // });
+
     mm.add( '(max-width: 767px)', () => {
 
         const tl = buildTimeline();
@@ -56,13 +94,12 @@ export const createHeaderController = () => {
         tl
         .to( logo, {
             scale: 0.55,
-            y: -35,
+            y: -30,
             duration: 0.25
         }, 0 )
         .to( menu, {
             scale: 0.85,
-            x: 75,
-            y: -290,
+            y: -240,
             duration: 0.25,
             stagger: 0.03,
             onStart: () => menu.forEach( el => ( el.style.pointerEvents = 'auto') ),
@@ -96,12 +133,12 @@ export const createHeaderController = () => {
         tl
         .to( logo, {
             scale: 0.25,
-            y: -190,
+            y: -170,
             duration: 0.25
         }, 0)
         .to( menu, {
             // scale: 0.75,
-            y: -390,
+            y: -370,
             paddingLeft: '0px',
             duration: 0.2,
             stagger: 0.03,
@@ -125,12 +162,12 @@ export const createHeaderController = () => {
         tl
         .to( logo, {
             scale: 0.25,
-            y: -150,
+            y: -130,
             duration: 0.25
         }, 0)
         .to( menu, {
             // scale: 0.75,
-            y: -300,
+            y: -280,
             paddingLeft: '0px',
             duration: 0.2,
             stagger: 0.03,
@@ -154,12 +191,12 @@ export const createHeaderController = () => {
         tl
         .to( logo, {
             scale: 0.20,
-            y: -215,
+            y: -195,
             duration: 0.25
         }, 0)
         .to( menu, {
             // scale: 0.75,
-            y: -435,
+            y: -415,
             paddingLeft: '0px',
             duration: 0.2,
             stagger: 0.03,
@@ -184,12 +221,12 @@ export const createHeaderController = () => {
         tl
         .to( logo, {
             scale: 0.20,
-            y: -230,
+            y: -210,
             duration: 0.25
         }, 0)
         .to( menu, {
             // scale: 0.75,
-            y: -470,
+            y: -450,
             paddingLeft: '0px',
             duration: 0.2,
             stagger: 0.03,
@@ -214,12 +251,12 @@ export const createHeaderController = () => {
         tl
         .to( logo, {
             scale: 0.20,
-            y: -250,
+            y: -230,
             duration: 0.25
         }, 0)
         .to( menu, {
             // scale: 0.75,
-            y: -520,
+            y: -500,
             paddingLeft: '0px',
             duration: 0.2,
             stagger: 0.03,

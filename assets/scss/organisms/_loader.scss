@@ -4,7 +4,7 @@
 .loader {
     position: fixed;
     inset: 0;
-    background: index.$white;
+    background: index.$primary;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,19 +34,19 @@
     }
 
     // Counter
-    &__counter {
-        font-family: index.$font-primary;
-        text-align: center;
-        font-size: 16px;
-        line-height: 1;
-        font-weight: 700;
-        margin-top: -20px;
+    // &__counter {
+    //     font-family: index.$font-primary;
+    //     text-align: center;
+    //     font-size: 16px;
+    //     line-height: 1;
+    //     font-weight: 700;
+    //     margin-top: -20px;
 
-        @include index.l {
-            font-size: 20px;
-        }
+    //     @include index.l {
+    //         font-size: 20px;
+    //     }
 
-    }
+    // }
 
     &__gif {
         display: inline-block;

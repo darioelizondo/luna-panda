@@ -14,13 +14,12 @@ export const mainSlider = (root = document) => {
 
     const init = () => {
       swiper = new Swiper(currentSlider, {
-        speed: 3000,
+        speed: 1200,
         autoplay: {
-          delay: 5500,
+          delay: 7000,
           disableOnInteraction: false,
         },
         loop: true,
-        watchSlidesProgress: true,
         effect: 'creative',
         creativeEffect: {},
       });

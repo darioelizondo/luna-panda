@@ -14,8 +14,16 @@
         width: 200px;
         max-width: 100%;
 
-        @include index.m {
-            width: 100%;
+        @include index.l {
+            width: 215px;
+        }
+
+        @include index.xl {
+            width: 225px;
+        }
+
+        @include index.xxl {
+            width: 250px;
         }
 
     }

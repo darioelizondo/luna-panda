@@ -3,22 +3,35 @@
 // Projects Home
 .projects-home {
     margin-top: -300px;
-    margin-bottom: 100px;
+    padding-bottom: 150px;
 
     @include index.l {
-        margin-top: 100px;
-        margin-bottom: 200px;
+        margin-top: 0;
+        padding-top: 150px;
+        padding-bottom: 450px;
+    }
+
+    @include index.xl {
+        padding-top: 200px;
+        padding-bottom: 300px;
+    }
+    
+
+    @include index.xxl {
+        padding-top: 250px;
+        padding-bottom: 300px;
     }
 
     // Inner
     &__inner {
         display: grid;
         grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
-        gap: index.$lh;
+        gap: calc( index.$lh * 7 );
         overflow: visible;
 
         @include index.l {
             grid-template-columns: repeat( 12, minmax( 0, 1fr ) );
+            gap: index.$lh;
         }
 
     }

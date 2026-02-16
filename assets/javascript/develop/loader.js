@@ -10,11 +10,11 @@ const loader = () => {
     const loaderEl = document.querySelector('.loader');
     const canvas = document.getElementById('burn-canvas');
     const gif = document.getElementById('gif-loader');
-    const counterEl = document.querySelector('[data-loader-percent]');
+    // const counterEl = document.querySelector('[data-loader-percent]');
 
     // Guards
     if (!loaderEl || !canvas) return;
-    if (!counterEl) return;
+    // if (!counterEl) return;
 
     // Asegurar que THREE existe
     if (!THREE || !THREE.WebGLRenderer) {
@@ -26,14 +26,14 @@ const loader = () => {
     const DURATION = 3750;
 
     // Iniciar animación de contador
-    gsap.to(counter, {
-        value: 100,
-        duration: DURATION / 1000,
-        ease: 'power1.out',
-        onUpdate: () => {
-        counterEl.textContent = `${Math.round(counter.value)}%`;
-        },
-    });
+    // gsap.to(counter, {
+    //     value: 100,
+    //     duration: DURATION / 1000,
+    //     ease: 'power1.out',
+    //     onUpdate: () => {
+    //     counterEl.textContent = `${Math.round(counter.value)}%`;
+    //     },
+    // });
 
     // Ocultar gif una vez empieza la animación
     setTimeout( () => {
@@ -76,6 +76,7 @@ const loader = () => {
 
         uniform float u_time;
         uniform float u_progress;
+        uniform vec3 u_brandColor;
 
         float hash(vec2 p) {
             return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
@@ -137,10 +138,9 @@ const loader = () => {
             float edgeWidth = 0.08;
             float edge = smoothstep(threshold, threshold + edgeWidth, n);
 
-            // blanco → negro
-            vec3 white = vec3(1.0);
+            // brand color (amarillo) → negro
             vec3 black = vec3(0.0);
-            vec3 color = mix(white, black, edge);
+            vec3 color = mix(u_brandColor, black, edge);
 
             // donde está totalmente quemado, hacemos hueco
             if (burnt > 0.99 && edge < 0.01) {
@@ -155,7 +155,8 @@ const loader = () => {
         const material = new THREE.ShaderMaterial({
         uniforms: {
             u_time: { value: 0 },
-            u_progress: { value: 0 }
+            u_progress: { value: 0 },
+            u_brandColor: { value: new THREE.Color('#FFA300') } // Primary color
         },
         vertexShader,
         fragmentShader,

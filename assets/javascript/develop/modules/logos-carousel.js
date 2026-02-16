@@ -13,6 +13,13 @@ export const logosCarousel = ( root = document ) => {
     let swiper = null;
 
     const init = () => {
+
+      const rect = currentSlider.getBoundingClientRect();
+
+      if (currentSlider.swiper && !currentSlider.swiper.destroyed) {
+        currentSlider.swiper.destroy(true, true);
+      }
+
       swiper = new Swiper(currentSlider, {
         speed: 3000,
         autoplay: {
@@ -20,7 +27,7 @@ export const logosCarousel = ( root = document ) => {
           disableOnInteraction: false,
         },
         loop: true,
-        slidesPerView: 2,
+        slidesPerView: 3,
         spaceBetween: 24,
         breakpoints: {
             768: {

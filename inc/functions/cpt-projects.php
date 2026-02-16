@@ -30,8 +30,7 @@ add_action('init', function () {
     'rewrite'             => ['slug' => 'projects'],
     'menu_icon'           => 'dashicons-portfolio',
     'show_in_rest'        => true, // útil si después querés endpoints
-    'supports'            => ['title', 'thumbnail', 'editor', 'page-attributes'],
-    // page-attributes => habilita "menu_order" (orden manual)
+    'supports'            => ['title', 'thumbnail', 'editor', 'page-attributes'], // page-attributes => habilita "menu_order" (orden manual)
   ]);
 
   // Taxonomy: Project Category (para filtro)

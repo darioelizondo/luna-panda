@@ -5,10 +5,19 @@ import gsap from './libs/gsap';
 import { createHeaderController } from './modules/header-controller';
 import { bindHeaderToScroll } from './modules/header-scroll';
 import { playLogoIntro } from './modules/logo-intro';
+import { createHomeHeroSnap } from './modules/home-hero-snap';
 
 const AppBarba = () => {
   const wrapper = document.querySelector('[data-barba="wrapper"]');
   const container = document.querySelector('[data-barba="container"]');
+
+  // Disable browser scroll restoration (reload + back/forward)
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+  // Force top on normal load + BFCache restore
+  const forceTop = () => window.scrollTo(0, 0);
+  window.addEventListener('pageshow', forceTop); // clave para BFCache
+  window.addEventListener('load', () => setTimeout(forceTop, 0)); // clave para "late restore"
 
   if (!wrapper || !container) {
     console.warn('[Barba] wrapper/container not found. Skipping Barba init.');
@@ -20,6 +29,9 @@ const AppBarba = () => {
   // ---------------------------
   let headerCtrl = null;
   let cleanupScroll = null;
+
+  // Home "hero snap" controller (only on home)
+  let homeSnap = null;
 
   const scrollToTopSmooth = (duration = 0.35) => {
     const state = { y: window.scrollY };
@@ -60,6 +72,19 @@ const AppBarba = () => {
     } else {
       headerCtrl?.setCompact(true, { immediate: true });
     }
+  };
+
+  const applyHomeSnapByNamespace = (namespace) => {
+    // Destroy previous snap (if any)
+    homeSnap?.destroy?.();
+    homeSnap = null;
+
+    if (namespace !== 'home') return;
+
+    homeSnap = createHomeHeroSnap(document, {
+      duration: 0.5,
+      threshold: 0.18,
+    });
   };
 
   initHeaderOnce();
@@ -124,6 +149,10 @@ const AppBarba = () => {
         },
 
         leave: async ({ current }) => {
+          // 0) kill home snap while transitioning out
+          homeSnap?.destroy?.();
+          homeSnap = null;
+
           // 1) disable header scroll reactions during transition
           cleanupScroll?.();
           cleanupScroll = null;
@@ -161,7 +190,26 @@ const AppBarba = () => {
   // ---------------------------
   // Hooks (site logic)
   // ---------------------------
+
+  // 1) First load: init modules ONCE for the initial container
+  barba.hooks.once(({ next }) => {
+    // Init all scoped modules for the initial container
+    window.App?.init?.(next.container);
+
+    // Apply header state by namespace
+    const ns =
+      next?.namespace || next?.container?.getAttribute('data-barba-namespace') || 'default';
+    applyHeaderStateByNamespace(ns);
+
+    // Enable/disable home hero snap
+    applyHomeSnapByNamespace(ns);
+  });
+
   barba.hooks.beforeLeave(({ current }) => {
+    // Kill home snap (safety)
+    homeSnap?.destroy?.();
+    homeSnap = null;
+
     // Destroy all scoped modules for the old container
     window.App?.destroy?.(current.container);
   });
@@ -174,6 +222,9 @@ const AppBarba = () => {
     const ns =
       next?.namespace || next?.container?.getAttribute('data-barba-namespace') || 'default';
     applyHeaderStateByNamespace(ns);
+
+    // Enable/disable home hero snap
+    applyHomeSnapByNamespace(ns);
   });
 };
 

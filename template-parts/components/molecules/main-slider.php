@@ -29,10 +29,6 @@ $data = $args['data'] ?? null;
                 <?php endforeach; ?>
             </div>
 
-            <!-- Swipper controls -->
-            <!-- <div class="main-slider__next swiper-button-next"></div>
-            <div class="main-slider__prev swiper-button-prev"></div> -->
-
         </div>
     </div>
     <!-- End main slider -->

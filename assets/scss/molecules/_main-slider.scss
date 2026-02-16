@@ -4,12 +4,12 @@
 .main-slider {
     transition: all .4s ease;
 
-    &:hover .main-slider__next,
-    &:hover .main-slider__prev {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-    }
+    // &:hover .main-slider__next,
+    // &:hover .main-slider__prev {
+    //     transform: translateX(0);
+    //     opacity: 1;
+    //     visibility: visible;
+    // }
 
     // Inner
     // &__inner {
@@ -25,15 +25,25 @@
         background-size: cover;
         overflow: hidden;
         opacity: 0 !important;
-        transition: opacity .4s ease;
+        transition: opacity 1.2s ease; // Same as main-slider.js
 
-        &.swiper-slide-active {
+        &.swiper-slide-active,
+        &.swiper-slide-duplicate-active {
             opacity: 1 !important;
         }
 
-        // &.swiper-slide-active .main-slider__image {
-        //     animation: zoomIn 25s ease-in-out infinite;
-        // }
+        &.swiper-slide-active .main-slider__image,
+        &.swiper-slide-duplicate-active .main-slider__image {
+            transform: scale(1); // Smooth zoom in
+            transition: transform 7s ease-out;
+        }
+
+        &.swiper-slide-prev .main-slider__image,
+        &.swiper-slide-duplicate-prev .main-slider__image {
+            transform: scale(1);
+            transition: none;
+        }
+
     }   
 
     // Picture
@@ -51,8 +61,8 @@
         display: block;
         width: 100%;
         height: auto;
-        transform: scale(1.3);
-        animation: zoomIn 25s ease-in-out infinite;
+        transform: scale(1.1);
+        will-change: transform;
     }
 
     // Next and Prev buttons
@@ -86,15 +96,6 @@
     &__prev {
         left: 25px;
         transform:translateX(50px);
-    }
-
-    @keyframes zoomIn {
-        0% {
-            transform: scale(1.3);
-        }
-        100% {
-            transform: scale(1);
-        }
     }
 
 }

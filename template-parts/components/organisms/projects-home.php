@@ -13,7 +13,7 @@
 
 <?php if( isset( $projects_home ) && !empty( $projects_home ) ) : ?>
     <!-- Projects home -->
-    <section class="projects-home">
+    <section class="projects-home" data-projects-home>
         <div class="projects-home__inner container grid-columns-l--12">
             <?php foreach( $projects_home[ 'items' ] as $item_project ) : ?>
                 <?php
@@ -34,6 +34,13 @@
 
                     $z   = isset($item_project['z_index']) ? (int) $item_project['z_index'] : 0;
 
+                    // Content style settings
+                    $cox  = isset($item_project['offset_x']) ? (int) $item_project['content_offset_x'] : 0;
+                    $coy  = isset($item_project['offset_y']) ? (int) $item_project['content_offset_y'] : 0;
+
+                    $coxm = isset($item_project['offset_x_m']) ? (int) $item_project['content_offset_x_m'] : 0;
+                    $coym = isset($item_project['offset_y_m']) ? (int) $item_project['content_offset_y_m'] : 0;
+
                     // Clamps
                     $ox  = max(-400, min(400, $ox));
                     $oy  = max(-400, min(400, $oy));
@@ -41,18 +48,28 @@
                     $oym = max(-250,  min(250,  $oym));
                     $z   = max(0,    min(20,  $z));
 
+                    // Content clamps
+                    $cox  = max(-400, min(400, $cox));
+                    $coy  = max(-400, min(400, $coy));
+                    $coxm = max(-250,  min(250,  $coxm));
+                    $coym = max(-250,  min(250,  $oym));
+
                     // Data item project
                     $data_item_project = array(
-                        'item_project'     => $item_project,
-                        'col_start_mobile' => $start_mobile,
-                        'col_span_mobile'  => ( $span_mobile === 1 ? 1 : 2 ),
-                        'col_start'        => $start,
-                        'col_span'         => max( 1, min( 10, $span ) ),
-                        'offset_x_m'       => $oxm,
-                        'offset_y_m'       => $oym,
-                        'offset_x'         => $ox,
-                        'offset_y'         => $oy,
-                        'z_index'          => $z,
+                        'item_project'        => $item_project,
+                        'col_start_mobile'    => $start_mobile,
+                        'col_span_mobile'     => ( $span_mobile === 1 ? 1 : 2 ),
+                        'col_start'           => $start,
+                        'col_span'            => max( 1, min( 10, $span ) ),
+                        'offset_x_m'          => $oxm,
+                        'offset_y_m'          => $oym,
+                        'offset_x'            => $ox,
+                        'offset_y'            => $oy,
+                        'z_index'             => $z,
+                        'content_offset_x_m'  => $coxm,
+                        'content_offset_y_m'  => $coym,
+                        'content_offset_x'    => $cox,
+                        'content_offset_y'    => $coy,
                     );
                     
                     // Item project home

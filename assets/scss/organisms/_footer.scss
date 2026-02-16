@@ -2,18 +2,34 @@
 
 // Footer
 .footer {
-
     border-top: solid 1px #323232;
+    margin-top: 80px;
     padding: calc( index.$lh * 1.5 ) 0;
 
     @include index.l {
-        padding: calc( index.$lh * 2.5 );
+        margin-top: 200px;
+        padding: calc( index.$lh * 2.5 ) 0;
     }
 
+    @include index.xl {
+        margin-top: 300px;
+    }
+
+    @include index.xxl {
+        margin-top: 400px;
+    }
 
     // Inner
     &__inner {
-        gap: index.$lh
+        display: flex;
+        flex-direction: column;
+        gap: index.$lh;
+
+       @include index.l {
+            display: grid;
+        }
+
+
     }
 
     // Top
@@ -41,10 +57,44 @@
 
     }
 
+    // Middle
+    &__middle {
+        display: flex;
+        flex-direction: column;
+        gap: index.$lh;
+
+        @include index.l {
+            grid-column: 2 / 12;
+        }
+    }
+
+    // Carousel title
+    &__carousel-title {
+        color: index.$primary;
+        font-size: 13px;
+        line-height: 17px;
+        font-weight: 700;
+
+        @include index.l {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        @include index.xl {
+            font-size: 15px;
+            line-height: 21px;
+        }
+
+        @include index.xxl {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
     // Bottom
     &__bottom {
         @include index.l {
-            grid-column: 2 / 4;
+            grid-column: 2 / 12;
         }
     }
 

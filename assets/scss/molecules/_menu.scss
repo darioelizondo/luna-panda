@@ -32,14 +32,15 @@
     &__nav {
         width: 100%;
         display: flex;
-        // justify-content: space-between;
+        flex-direction: column;
+        justify-content: flex-start;
         margin: 0;
-        gap: index.$lh;
+        gap: calc( index.$lh / 6 );
         list-style: none;
 
         @include index.l {
-            flex-direction: column;
-            justify-content: flex-start;
+            // flex-direction: column;
+            // justify-content: flex-start;
             align-items: flex-start;
             gap: calc( index.$lh / 8 );
         }

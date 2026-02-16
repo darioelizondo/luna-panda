@@ -28,16 +28,16 @@
     <body <?php body_class(); ?>>
 
         <!-- Loader -->
-        <div class="loader">
+        <!-- <div class="loader">
             <div id="gif-loader" class="loader__wrapper-gif">
-                <img class="loader__gif image--fluid" src="<?php echo TDU . '/assets/images/loading/loading.gif'; ?>">
-                <!-- Counter -->
-                <div class="loader__counter">
+                <img class="loader__gif image--fluid" src="<?php // echo TDU . '/assets/images/loading/loading.gif'; ?>">
+                 Counter
+                 <div class="loader__counter">
                     <span data-loader-percent>0%</span>
                 </div>
             </div>
             <canvas id="burn-canvas"></canvas>
-        </div>
+        </div> -->
         <!-- End loader -->
 
         <?php include TD . '/template-parts/components/organisms/header.php'; ?>

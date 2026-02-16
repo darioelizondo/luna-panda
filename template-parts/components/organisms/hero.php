@@ -18,7 +18,7 @@
 
 <?php if( isset( $hero ) && !empty( $hero ) ) : ?>
     <!-- Hero -->
-    <section class="hero <?php echo 'module-' . $module_count; ?>">
+    <section class="hero <?php echo 'module-' . $module_count; ?>" data-hero>
         <div class="hero__inner">
             <!-- Slider -->
             <div class="hero__slider">

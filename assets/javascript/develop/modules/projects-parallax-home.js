@@ -29,7 +29,7 @@ function getStrength(item, index, mult = 1) {
   // dirección alternada para un look más “orgánico”
   const dir = index % 2 === 0 ? -1 : 1;
 
-  const BASE = 24;
+  const BASE = 12;
 
   return BASE * mult * sizeFactor * indexFactor * dir;
 }

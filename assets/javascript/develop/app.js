@@ -58,6 +58,6 @@ function destroy(root = document) {
 window.App = { init, destroy };
 
 // First load
-document.addEventListener('DOMContentLoaded', () => {
-  window.App.init(document);
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   window.App.init(document);
+// });

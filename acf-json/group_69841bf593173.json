@@ -156,6 +156,98 @@
                                     ]
                                 },
                                 {
+                                    "key": "field_699276cf023c1",
+                                    "label": "Content Offset X Mobile",
+                                    "name": "content_offset_x_m",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Set a value between -250 and 250 px",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 0,
+                                    "min": -400,
+                                    "max": 400,
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_699276d2023c2",
+                                    "label": "Content Offset Y Mobile",
+                                    "name": "content_offset_y_m",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Set a value between -250 and 250 px",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 0,
+                                    "min": -400,
+                                    "max": 400,
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_699276d5023c3",
+                                    "label": "Content offset X",
+                                    "name": "content_offset_x",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Set a value between -400 and 400 px",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 0,
+                                    "min": -400,
+                                    "max": 400,
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_699276d8023c4",
+                                    "label": "Content offset Y",
+                                    "name": "content_offset_y",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Set a value between -400 and 400 px",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 0,
+                                    "min": -400,
+                                    "max": 400,
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "step": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
                                     "key": "field_69841cf458a89",
                                     "label": "Images",
                                     "name": "",
@@ -577,5 +669,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770327290
+    "modified": 1771206516
 }
