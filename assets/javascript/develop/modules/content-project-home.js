@@ -2,7 +2,7 @@
 export function projectHomeTouchHover({
   root = document,
   rootSelector = '.projects-home',
-  itemSelector = '.item-project-home',
+  itemSelector = '.project-item-home',
   imageSelector = '.image-project-home',
   targetSelector = '.content-project-home',
   activeClass = 'active',

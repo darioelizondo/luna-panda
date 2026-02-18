@@ -35,11 +35,11 @@
                     $z   = isset($item_project['z_index']) ? (int) $item_project['z_index'] : 0;
 
                     // Content style settings
-                    $cox  = isset($item_project['offset_x']) ? (int) $item_project['content_offset_x'] : 0;
-                    $coy  = isset($item_project['offset_y']) ? (int) $item_project['content_offset_y'] : 0;
+                    $cox  = isset($item_project['content_offset_x']) ? (int) $item_project['content_offset_x'] : 0;
+                    $coy  = isset($item_project['content_offset_y']) ? (int) $item_project['content_offset_y'] : 0;
 
-                    $coxm = isset($item_project['offset_x_m']) ? (int) $item_project['content_offset_x_m'] : 0;
-                    $coym = isset($item_project['offset_y_m']) ? (int) $item_project['content_offset_y_m'] : 0;
+                    $coxm = isset($item_project['content_offset_x_m']) ? (int) $item_project['content_offset_x_m'] : 0;
+                    $coym = isset($item_project['content_offset_y_m']) ? (int) $item_project['content_offset_y_m'] : 0;
 
                     // Clamps
                     $ox  = max(-400, min(400, $ox));
@@ -73,7 +73,7 @@
                     );
                     
                     // Item project home
-                    get_template_part( 'template-parts/components/molecules/item-project-home', null, array( 'data' => $data_item_project ) ); 
+                    get_template_part( 'template-parts/components/molecules/project-item-home', null, array( 'data' => $data_item_project ) ); 
                 ?>
             <?php endforeach; ?>
         </div>

@@ -217,6 +217,21 @@ button:focus {
 
 }
 
+.grid-columns-s--2 {
+	display: grid;
+	grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+	gap: index.$lh;
+}
+
+.grid-columns-l--4 {
+	display: grid;
+
+	@include index.l {
+		grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+		gap: index.$lh;
+	}
+}
+
 .no--border {
 	border: none;
 }

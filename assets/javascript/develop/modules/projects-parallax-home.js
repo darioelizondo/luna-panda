@@ -44,7 +44,7 @@ export function initProjectsParallax(container = document) {
   const scope = container.querySelector?.(".projects-home");
   if (!scope) return () => {};
 
-  const items = scope.querySelectorAll(".item-project-home");
+  const items = scope.querySelectorAll(".project-item-home");
   if (!items.length) return () => {};
 
   // MatchMedia para desactivar en mobile
@@ -55,7 +55,7 @@ export function initProjectsParallax(container = document) {
     // Context para poder revertir todo fácil en destroy
     ctx = gsap.context(() => {
       items.forEach((item, index) => {
-        const motion = item.querySelector(".item-project-home--motion");
+        const motion = item.querySelector(".project-item-home--motion");
         if (!motion) return;
 
         const strength = getStrength(item, index, 2);
@@ -84,7 +84,7 @@ export function initProjectsParallax(container = document) {
     // Context para poder revertir todo fácil en destroy
     ctx = gsap.context(() => {
       items.forEach((item, index) => {
-        const motion = item.querySelector(".item-project-home--motion");
+        const motion = item.querySelector(".project-item-home--motion");
         if (!motion) return;
 
         const strength = getStrength(item, index, 8);
