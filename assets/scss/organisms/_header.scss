@@ -68,6 +68,7 @@
 
     // Menu
     &__menu {
+        align-self: flex-start;
         will-change: padding-left;
 
         @include index.l {

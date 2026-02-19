@@ -1,0 +1,17 @@
+@use '../@config/index';
+
+// Page projects
+.page-projects {
+
+    // Inner
+    &__inner {
+        grid-template-columns: repeat( 1, 1fr );
+        gap: index.$lh;
+
+        @include index.l {
+            grid-template-columns: repeat( 12, minmax( 0, 1fr ) );
+        }
+
+    }
+
+}

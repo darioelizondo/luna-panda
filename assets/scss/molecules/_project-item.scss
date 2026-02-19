@@ -1,0 +1,42 @@
+@use '../@config/index';
+
+// Project item
+.project-item {
+    display: block;
+    width: 100%;
+    transform: translate(var(--p-oxm, 0px), var(--p-oym, 0px));
+
+    @include index.l {
+        transform: translate(var(--p-ox, 0px), var(--p-oy, 0px));
+    }
+
+    &:nth-of-type( odd ) {
+       @include index.l {
+            grid-column: 3 / 7;
+       }
+    }
+
+    &:nth-of-type( even ) {
+       @include index.l {
+            grid-column: 8 / 12;
+       }
+    }
+
+    &:hover .image-project__image {
+        transform: scale(1.05);
+    }
+
+    // Inner
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+        gap: calc( index.$lh / 2 );
+
+        @include index.l {
+            grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+            gap: index.$lh;
+        }
+
+    }
+
+}

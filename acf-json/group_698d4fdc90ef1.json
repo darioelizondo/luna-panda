@@ -80,7 +80,7 @@
                     "add_term": 1,
                     "save_terms": 0,
                     "load_terms": 0,
-                    "return_format": "id",
+                    "return_format": "object",
                     "field_type": "multi_select",
                     "allow_null": 1,
                     "allow_in_bindings": 0,
@@ -173,9 +173,9 @@
                             "save_options": 0
                         },
                         {
-                            "key": "field_698d56651f8d7",
-                            "label": "Logo mobile col span",
-                            "name": "logo_mobile_col_span",
+                            "key": "field_6994f83a6cf7a",
+                            "label": "Content mobile col span",
+                            "name": "content_mobile_col_span",
                             "aria-label": "",
                             "type": "select",
                             "instructions": "Select how many columns to span",
@@ -202,9 +202,9 @@
                             "save_options": 0
                         },
                         {
-                            "key": "field_6994f83a6cf7a",
-                            "label": "Content Col Span Mobile",
-                            "name": "content_col_span_mobile",
+                            "key": "field_698d56651f8d7",
+                            "label": "Logo mobile col span",
+                            "name": "logo_mobile_col_span",
                             "aria-label": "",
                             "type": "select",
                             "instructions": "Select how many columns to span",
@@ -338,6 +338,37 @@
                             "save_options": 0
                         },
                         {
+                            "key": "field_6994f8936cf7b",
+                            "label": "Content col span",
+                            "name": "content_col_span",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "Select how many columns to span",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "1": "1",
+                                "2": "2",
+                                "3": "3",
+                                "4": "4"
+                            },
+                            "default_value": false,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "create_options": 0,
+                            "save_options": 0
+                        },
+                        {
                             "key": "field_698d54411f8d1",
                             "label": "Logo col span",
                             "name": "logo_col_span",
@@ -403,37 +434,6 @@
                             "key": "field_698d54b51f8d3",
                             "label": "Short line and Button col span",
                             "name": "short_line_and_button_col_span",
-                            "aria-label": "",
-                            "type": "select",
-                            "instructions": "Select how many columns to span",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "1": "1",
-                                "2": "2",
-                                "3": "3",
-                                "4": "4"
-                            },
-                            "default_value": false,
-                            "return_format": "value",
-                            "multiple": 0,
-                            "allow_null": 0,
-                            "allow_in_bindings": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": "",
-                            "create_options": 0,
-                            "save_options": 0
-                        },
-                        {
-                            "key": "field_6994f8936cf7b",
-                            "label": "Content Col Span",
-                            "name": "content_col_span",
                             "aria-label": "",
                             "type": "select",
                             "instructions": "Select how many columns to span",
@@ -597,5 +597,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771370703
+    "modified": 1771476883
 }

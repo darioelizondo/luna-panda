@@ -28,7 +28,7 @@ export const mainSlider = (root = document) => {
     };
 
     // Delay for "Loader animation"
-    const timeout = setTimeout(init, 3750);
+    const timeout = setTimeout(init, 0); // 3750
 
     // We keep a reference to clear the timeout if it is destroyed before it is destroyed.
     slider.__mainSliderTimeout = timeout;

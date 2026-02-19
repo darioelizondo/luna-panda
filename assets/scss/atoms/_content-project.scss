@@ -1,0 +1,163 @@
+@use '../@config/index';
+
+// Content project
+.content-project {
+    grid-column: span var(--m-cspan, 2);
+    
+    @include index.l {
+        grid-column: span var(--cspan, 4);
+    }
+
+    // Inner
+    &__inner {
+        // display: grid;
+        // grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+        // gap: calc( index.$lh / 2 );
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: calc( index.$lh / 2 );
+
+        @include index.l {
+            display: grid;
+            grid-template-columns: repeat( 4, minmax( 0, 1fr ) );
+        }
+
+    }
+
+    // Logo
+    &__logo {
+        grid-column: span var(--i-m-logospan, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include index.l {
+            grid-column: span var(--i-logospan, 1);
+        }
+
+    }
+
+    // Title + Categories
+    &__title-categories {
+        grid-column: span var(--i-m-titletagspan, 1);
+        display: flex;
+        flex-direction: column;
+        gap: calc( index.$lh / 3 );
+
+        @include index.l {
+            grid-column: span var(--i-titletagspan, 1);
+            gap: calc( index.$lh / 2 );
+        }
+    }
+
+    &__title {
+        color: index.$primary;
+        font-size: 16px;
+        line-height: 1.2;
+        font-style: italic;
+
+        @include index.l {
+            font-size: 15px;
+        }
+
+        @include index.xl {
+             font-size: 16px;
+        }
+
+        @include index.xxl {
+             font-size: 19px;
+        }
+
+    }
+
+    &__category-list {
+        display: flex;
+        flex-direction: column;
+        gap: calc( index.$lh / 3 );
+    }
+
+    &__category {
+        color: index.$soft-primary;
+        font-size: 14px;
+        line-height: 1;
+        font-style: italic;
+
+        @include index.l {
+            font-size: 13px;
+        }
+
+        @include index.xl {
+             font-size: 14px;
+        }
+
+        @include index.xxl {
+             font-size: 16px;
+        }
+
+    }
+
+
+    // Short line + Button
+    &__short-line-button {
+        grid-column: span var(--i-m-shortbuttonspan, 1);
+        display: flex;
+        flex-direction: column;
+        gap: calc( index.$lh / 3 );
+
+        @include index.l {
+            grid-column: span var(--i-shortbuttonspan, 1);
+            gap: calc( index.$lh / 2 );
+        }
+
+    }
+
+    &__short-line {
+        display: none;
+        color: index.$soft-primary;
+        font-size: 14px;
+        line-height: 1;
+        font-style: italic;
+
+        @include index.l {
+            display: block;
+            font-size: 13px;
+        }
+
+        @include index.xl {
+             font-size: 14px;
+        }
+
+        @include index.xxl {
+             font-size: 16px;
+        }
+    }
+
+    &__button {
+        color: index.$primary;
+        font-size: 16px;
+        line-height: 1;
+        font-style: italic;
+        transition: .3s ease;
+        white-space: nowrap;
+
+        @include index.l {
+            font-size: 15px;
+        }
+
+        @include index.xl {
+             font-size: 16px;
+        }
+
+        @include index.xxl {
+             font-size: 19px;
+        }
+
+        &:hover {
+            color: index.$white;
+        }
+
+    }
+
+}

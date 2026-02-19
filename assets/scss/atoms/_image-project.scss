@@ -1,0 +1,26 @@
+@use '../@config/index';
+
+// Image project
+.image-project {
+    grid-column: span var(--m-span, 2);
+    overflow: hidden;
+
+    @include index.l {
+        grid-column: span var(--span, 4);
+    }
+
+    // Picture
+    &__picture {
+        font-size: 0;
+        line-height: 1;
+    }
+
+    // Image
+    &__image {
+        width: 100%;
+        max-width: 100%;
+        transition: transform .5s ease;
+        will-change: transition;
+    }
+
+}

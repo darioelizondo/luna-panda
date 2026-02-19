@@ -1,0 +1,81 @@
+@use '../@config/index';
+
+// Projects filters
+.projects-filters {
+    padding-top: 107px;
+    padding-left: 100px;
+
+    @include index.m {
+        padding-top: 160px;
+    }
+
+    @include index.l {
+        padding-top: 125px;
+        padding-left: 0;
+        grid-column: 3 / 5;
+    }
+
+    @media only screen and ( min-width: 1170px ) {
+        padding-top: 163px;
+    }
+
+    @include index.e {
+        padding-top: 205px;
+        padding-left: 0;
+        grid-column: 3 / 5;
+    }
+
+    @media only screen and ( min-width: 1350px ) {
+        padding-top: 140px;
+    }
+
+    @include index.xl {
+        padding-top: 143px;
+    }
+
+    @include index.xxl {
+        padding-top: 170px;
+    }
+
+    // Inner
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: calc( index.$lh / 6 );
+        align-items: flex-start;
+
+        @include index.l {
+            gap: calc( index.$lh / 8 );
+        }
+
+    }
+    
+    // Button
+    &__button {
+        font-family: index.$font-primary;
+        font-style: italic;
+        font-size: 13px;
+        line-height: 1;
+        padding: calc( index.$lh / 3 ) 0;
+        transition: color .3s ease;
+
+        &:hover {
+            color: index.$white
+        }
+
+        @include index.l {
+            font-size: 15px;
+            padding: calc( index.$lh / 12 ) 0;
+        }
+
+        @include index.xl {
+             font-size: 16px;
+        }
+
+        @include index.xxl {
+             font-size: 19px;
+        }
+
+    }
+
+}

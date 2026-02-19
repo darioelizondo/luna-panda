@@ -1,0 +1,33 @@
+@use '../@config/index';
+
+// Project presentation
+.project-presentation {
+    padding-top: calc( index.$lh * 4 );
+
+    @include index.l {
+        grid-column: span 12;
+        padding-top: calc( index.$lh * 6 );
+    }
+
+    @include index.xl {
+        padding-top: calc( index.$lh * 8 );
+    }
+
+    @include index.xxl {
+        padding-top: calc( index.$lh * 10 );
+    }
+
+    // Inner
+    &__inner {
+        width: 100%;
+        margin: 0;
+        gap: index.$lh;
+        row-gap: calc( index.$lh * 3 );
+
+        @include index.l {
+            row-gap: index.$lh;
+        }
+
+    }
+
+}

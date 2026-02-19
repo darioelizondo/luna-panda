@@ -30,6 +30,8 @@
 
     $terms = get_the_terms(get_the_ID(), 'project_category');
 
+    // print_r( $data['project_tags'] );
+
 ?>
 
 <?php if ( !empty($data) ) : ?>
@@ -59,7 +61,7 @@
                 <?php if ( !empty($data['project_tags']) ) : ?>
                 <ul class="content-project__category-list">
                     <?php foreach ( $data['project_tags'] as $tag ) : ?>
-                        <li class="content-project__category"><?php echo esc_html($tag['name'] ?? ''); ?></li>
+                        <li class="content-project__category"><?php echo esc_html($tag->name ?? ''); ?></li>
                     <?php endforeach; ?>
                 </ul>
                 <?php endif; ?>

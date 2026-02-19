@@ -99,7 +99,7 @@ export const createHeaderController = () => {
         }, 0 )
         .to( menu, {
             scale: 0.85,
-            y: -240,
+            y: -252,
             duration: 0.25,
             stagger: 0.03,
             onStart: () => menu.forEach( el => ( el.style.pointerEvents = 'auto') ),
@@ -138,7 +138,7 @@ export const createHeaderController = () => {
         }, 0)
         .to( menu, {
             // scale: 0.75,
-            y: -370,
+            y: -320,
             paddingLeft: '0px',
             duration: 0.2,
             stagger: 0.03,
@@ -196,7 +196,7 @@ export const createHeaderController = () => {
         }, 0)
         .to( menu, {
             // scale: 0.75,
-            y: -415,
+            y: -370,
             paddingLeft: '0px',
             duration: 0.2,
             stagger: 0.03,

@@ -15,18 +15,25 @@
 @use 'atoms/hamburger-icon';
 @use 'atoms/image-project-home';
 @use 'atoms/content-project-home';
+@use 'atoms/image-project';
+@use 'atoms/content-project';
+
 
 // Molecules
 @use 'molecules/main-slider';
 @use 'molecules/menu';
 @use 'molecules/project-item-home';
 @use 'molecules/logo-slider';
+@use 'molecules/project-item';
 
 
 // Organisms
 @use 'organisms/loader';
 @use 'organisms/header';
+@use 'organisms/footer';
 @use 'organisms/hero';
 @use 'organisms/projects-home';
 @use 'organisms/logos-carousel';
-@use 'organisms/footer';
+@use 'organisms/project_presentation';
+@use 'organisms/projects-filters';
+@use 'organisms/page-projects';

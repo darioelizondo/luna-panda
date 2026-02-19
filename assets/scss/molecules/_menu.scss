@@ -2,7 +2,8 @@
 
 // Menu
 .menu {
-    overflow: hidden;
+    display: inline-block;
+    // overflow: hidden;
     transition: transform .5s ease;
 
     @include index.l {
@@ -20,12 +21,18 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+
+        @include index.l {
+            align-items: center;
+        }
     }
 
     // Wrapper
     &__wrapper {
-        width: 100%;
+        @include index.l {
+            width: 100%;
+        }
     }
 
     // Navigation
@@ -52,10 +59,19 @@
         margin-bottom: index.$lh;
     }
 
+    .menu-item {
+        display: inline-block;
+
+        @include index.l {
+            display: block;
+        }
+
+    }
+
     // Link
     &__link {
-        display: block;
-        width: 100%;
+        display: inline-block;
+        width: auto;
         padding: calc( index.$lh / 3 ) 0;
         color: index.$primary;
         font-size: 16px;
@@ -69,7 +85,7 @@
         @include index.l {
             width: auto;
             padding: calc( index.$lh / 12 ) 0;
-             font-size: 15px;
+            font-size: 15px;
         }
 
         @include index.xl {

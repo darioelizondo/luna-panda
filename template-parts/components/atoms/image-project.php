@@ -27,7 +27,7 @@
 
 <?php if ( $src ) : ?>
     <!-- Image project  -->
-    <div class="image-project" style="<?php echo esc_attr($style); ?>">
+    <a class="image-project" style="<?php echo esc_attr($style); ?>" href="<?php echo esc_attr( get_the_permalink() ); ?>">
         <picture class="image-project__picture">
         <img
             class="image-project__image image--fluid"
@@ -39,5 +39,5 @@
             decoding="async"
         />
         </picture>
-    </div>
+    </a>
 <?php endif; ?>
