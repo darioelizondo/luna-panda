@@ -2,12 +2,26 @@
 
 // Project item
 .project-item {
+    --reveal-y: 0px;
+    --reveal-scale: 1;
+    --reveal-opacity: 1;
+
     display: block;
     width: 100%;
-    transform: translate(var(--p-oxm, 0px), var(--p-oym, 0px));
+    opacity: var(--reveal-opacity);
+    transform: translate(
+        calc(var(--p-oxm, 0px)),
+        calc(var(--p-oym, 0px) + var(--reveal-y))
+      )
+    scale(var(--reveal-scale));
+    
 
     @include index.l {
-        transform: translate(var(--p-ox, 0px), var(--p-oy, 0px));
+        transform: translate(
+        calc(var(--p-ox, 0px)),
+        calc(var(--p-oy, 0px) + var(--reveal-y))
+        )
+        scale(var(--reveal-scale));
     }
 
     &:nth-of-type( odd ) {

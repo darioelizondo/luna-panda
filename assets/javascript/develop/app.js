@@ -7,6 +7,8 @@ import { mainSlider } from './modules/main-slider';
 import { projectHomeTouchHover } from './modules/content-project-home';
 import { initProjectsParallax } from './modules/projects-parallax-home';
 import { logosCarousel } from './modules/logos-carousel';
+import { createProjectsFilter } from './modules/projects-filter';
+import { animateProjectItems } from './modules/projects-animate';
 
 const controllersMap = new WeakMap(); // key: root(container), value: controllers[]
 
@@ -44,6 +46,26 @@ function init(root = document) {
   // Logo carousel
   controllers.push(asController(logosCarousel(root)));
 
+  // Projects Filter
+  controllers.push(
+    asController(
+      createProjectsFilter(root, {
+        animateOnInit: true,
+
+        // When replacing (initial load or filter change)
+        onAfterReplace: (resultsEl) => {
+          animateProjectItems(resultsEl); // Animate all visible items
+        },
+
+        // When it appends (infinite scroll)
+        onAfterAppend: (resultsEl, newNodes) => {
+          // Animates ONLY the new ones (better performance + feels more natural)
+          animateProjectItems(resultsEl, newNodes);
+        },
+      })
+    )
+  );
+
   // Limpieza de nulls
   const cleaned = controllers.filter(Boolean);
   controllersMap.set(root, cleaned);
@@ -56,8 +78,3 @@ function destroy(root = document) {
 }
 
 window.App = { init, destroy };
-
-// First load
-// document.addEventListener('DOMContentLoaded', () => {
-//   window.App.init(document);
-// });

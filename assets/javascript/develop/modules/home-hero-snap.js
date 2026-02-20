@@ -8,7 +8,7 @@ export const createHomeHeroSnap = (root = document, opts = {}) => {
     duration = 0.65,
     threshold = 0.18,
     ease = 'power2.out',
-    desktopBreakpoint = 1024, // 🔥 solo desktop >= 1024px
+    desktopBreakpoint = 1024, // solo desktop >= 1024px
   } = opts;
 
   const hero = root.querySelector(heroSelector);
@@ -36,21 +36,31 @@ export const createHomeHeroSnap = (root = document, opts = {}) => {
 
     const state = { y: window.scrollY };
 
+    const emitSnapScroll = () => {
+      window.dispatchEvent(new CustomEvent('home:snap:scroll', { detail: { y: window.scrollY } }));
+    };
+
     tween = gsap.to(state, {
       y: targetY,
       duration,
       ease,
       overwrite: true,
-      onUpdate: () => window.scrollTo(0, state.y),
+      onUpdate: () => {
+        window.scrollTo(0, state.y);
+        emitSnapScroll();
+      },
       onComplete: () => {
         locked = false;
+        emitSnapScroll();
         killTween();
       },
       onInterrupt: () => {
         locked = false;
+        emitSnapScroll();
         killTween();
       },
     });
+
   };
 
   const onWheel = (e) => {

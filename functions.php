@@ -17,3 +17,4 @@
     require_once 'inc/functions/menus.php';
     require_once 'inc/functions/option-page.php';
     require_once 'inc/functions/cpt-projects.php';
+    require_once 'inc/functions/ajax-projects-filter.php';

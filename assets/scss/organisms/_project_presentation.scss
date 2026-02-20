@@ -2,6 +2,7 @@
 
 // Project presentation
 .project-presentation {
+    min-height: 100vh;
     padding-top: calc( index.$lh * 4 );
 
     @include index.l {
@@ -25,7 +26,15 @@
         row-gap: calc( index.$lh * 3 );
 
         @include index.l {
-            row-gap: index.$lh;
+            row-gap: calc( index.$lh * 2.5 );
+        }
+
+        @include index.xl {
+            row-gap: calc( index.$lh * 3.5 );
+        }
+
+        @include index.xxl {
+            row-gap: calc( index.$lh * 5 );
         }
 
     }
