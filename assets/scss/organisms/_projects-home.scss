@@ -3,7 +3,7 @@
 // Projects Home
 .projects-home {
     margin-top: -300px;
-    padding-bottom: 150px;
+    padding-bottom: 200px;
 
     @include index.l {
         margin-top: 0;
@@ -26,7 +26,8 @@
     &__inner {
         display: grid;
         grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
-        gap: calc( index.$lh * 7 );
+        column-gap: index.$lh;
+        row-gap: calc( index.$lh * 9 );
         overflow: visible;
 
         @include index.l {

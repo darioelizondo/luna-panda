@@ -28,6 +28,11 @@
             <!-- Footer logo -->
             <div class="footer__logo">
                 <?php get_template_part( 'template-parts/components/atoms/logo-footer' ); ?>
+                <div class="footer__caption">    
+                    <?php
+                        get_template_part( 'template-parts/components/atoms/footer-caption', null, [ 'data' => $data ] );
+                    ?>
+                </div>
             </div>
             <!-- Social -->
             <div class="footer__social">
@@ -48,15 +53,6 @@
                 <?php if( isset( $footer_logo_carousel ) && !empty( $footer_logo_carousel ) ) : ?>
                     <?php get_template_part( 'template-parts/components/molecules/logos-slider', null, [ 'data' => $data ]  ); ?>
                 <?php endif; ?>
-            </div>
-        </div>
-        <!-- Bottom -->
-        <div class="footer__bottom">
-            <!-- Caption -->
-            <div class="footer__caption">    
-                <?php
-                    get_template_part( 'template-parts/components/atoms/footer-caption', null, [ 'data' => $data ] );
-                ?>
             </div>
         </div>
     </div>

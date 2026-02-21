@@ -41,8 +41,15 @@
 
 
         @include index.l {
-            grid-column: 2 / 12;
+            grid-column: 3 / 12;
         }
+    }
+
+    // Logo
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        gap: calc( index.$lh / 2 );
     }
 
     // Social
@@ -64,13 +71,13 @@
         gap: index.$lh;
 
         @include index.l {
-            grid-column: 2 / 12;
+            grid-column: 3 / 12;
         }
     }
 
     // Carousel title
     &__carousel-title {
-        color: index.$primary;
+        color: index.$soft-primary;
         font-size: 13px;
         line-height: 17px;
         font-weight: 700;
@@ -94,7 +101,7 @@
     // Bottom
     &__bottom {
         @include index.l {
-            grid-column: 2 / 12;
+            grid-column: 3 / 12;
         }
     }
 

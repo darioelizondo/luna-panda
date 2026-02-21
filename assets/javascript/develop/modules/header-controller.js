@@ -60,6 +60,7 @@ export const createHeaderController = () => {
         {
           scale: 0.85,
           y: -252,
+          x: -46,
           duration: 0.25,
           stagger: 0.03,
           onStart: () => menu.forEach((el) => (el.style.pointerEvents = 'auto')),

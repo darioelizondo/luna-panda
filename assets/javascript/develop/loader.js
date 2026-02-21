@@ -156,7 +156,7 @@ const loader = () => {
         uniforms: {
             u_time: { value: 0 },
             u_progress: { value: 0 },
-            u_brandColor: { value: new THREE.Color('#FFA300') } // Primary color
+            u_brandColor: { value: new THREE.Color('#FB9701') } // Primary color
         },
         vertexShader,
         fragmentShader,

@@ -69,6 +69,7 @@
     // Menu
     &__menu {
         align-self: flex-start;
+        padding-left: calc( index.$lh * 2 );
         will-change: padding-left;
 
         @include index.l {
