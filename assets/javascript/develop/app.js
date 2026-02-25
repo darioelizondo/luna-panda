@@ -9,6 +9,7 @@ import { initProjectsParallax } from './modules/projects-parallax-home';
 import { logosCarousel } from './modules/logos-carousel';
 import { createProjectsFilter } from './modules/projects-filter';
 import { animateProjectItems } from './modules/projects-animate';
+import { projectSlider } from './modules/slider-block';
 
 const controllersMap = new WeakMap(); // key: root(container), value: controllers[]
 
@@ -65,6 +66,9 @@ function init(root = document) {
       })
     )
   );
+
+  // Project slider
+  controllers.push(asController(projectSlider(root)));
 
   // Limpieza de nulls
   const cleaned = controllers.filter(Boolean);

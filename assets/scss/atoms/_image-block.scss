@@ -1,0 +1,18 @@
+@use '../@config/index';
+
+// Image block
+.image_block {
+    
+    // Inner
+    &__inner {
+        width: 100%;
+    }
+
+    // Image
+    &__image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+}

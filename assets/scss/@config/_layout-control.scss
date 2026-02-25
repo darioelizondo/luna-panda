@@ -1,0 +1,13 @@
+@use './index';
+
+// Layout control
+.layout-control {
+    grid-column: var(--lc-start, 1) / span var(--lc-span, 2);
+    transform: translate(var(--lc-ox, 0px), var(--lc-oy, 0px));
+
+    @include index.l {
+        grid-column: var(--lc-d-start, 1) / span var(--lc-d-span, 12);
+        transform: translate(var(--lc-d-ox, 0px), var(--lc-d-oy, 0px));        
+    }
+
+}

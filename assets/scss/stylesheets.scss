@@ -5,6 +5,7 @@
 @use '@config/color';
 @use '@config/headings';
 @use '@config/button';
+@use '@config/layout-control';
 
 // Atoms
 @use 'atoms/logo';
@@ -17,6 +18,8 @@
 @use 'atoms/content-project-home';
 @use 'atoms/image-project';
 @use 'atoms/content-project';
+@use 'atoms/text-block';
+@use 'atoms/image-block';
 
 
 // Molecules
@@ -37,3 +40,4 @@
 @use 'organisms/project_presentation';
 @use 'organisms/projects-filters';
 @use 'organisms/page-projects';
+@use 'organisms/single-project';

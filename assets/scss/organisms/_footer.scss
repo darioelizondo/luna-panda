@@ -25,10 +25,9 @@
         flex-direction: column;
         gap: index.$lh;
 
-       @include index.l {
+        @include index.l {
             display: grid;
         }
-
 
     }
 

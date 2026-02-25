@@ -1,0 +1,25 @@
+@use '../@config/index';
+
+// Slider block
+.slider_block {
+    position: relative;
+
+    // Swiper
+    &__swiper {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    // Wrapper
+    &__wrapper {
+        width: 100%;
+    }
+
+    // Image
+    &__image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    
+}

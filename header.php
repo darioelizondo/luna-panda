@@ -48,6 +48,7 @@
                 function getCurrentNamespace() {
                     if ( is_front_page() ) return 'home';
                     if ( is_page_template( 'templates/page-projects.php' ) ) return 'projects';
+                    if ( is_singular( 'project' ) ) return 'projects';
                     return 'inner';
                 }
             ?>

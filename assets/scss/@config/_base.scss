@@ -122,8 +122,8 @@ button:focus {
 }
 
 ::selection {
-	color: index.$white;
-	background: index.$text;
+	color: index.$text;
+	background: index.$primary;
 	
 }
 
