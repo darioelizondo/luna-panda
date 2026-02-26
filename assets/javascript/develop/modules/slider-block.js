@@ -7,7 +7,7 @@ const toInt = (v, fallback) => {
   return Number.isFinite(n) ? n : fallback;
 };
 
-export const projectSlider = (root = document) => {
+export const sliderBlock = (root = document) => {
 
   const sliders = root.querySelectorAll('[data-swiper]');
 
@@ -32,6 +32,11 @@ export const projectSlider = (root = document) => {
       watchOverflow: true,
       slidesPerView: spvMobile,
       spaceBetween: spaceMobile,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      loop: true,
 
       breakpoints: {
         1024: {

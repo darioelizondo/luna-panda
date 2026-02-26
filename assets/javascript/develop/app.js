@@ -9,7 +9,8 @@ import { initProjectsParallax } from './modules/projects-parallax-home';
 import { logosCarousel } from './modules/logos-carousel';
 import { createProjectsFilter } from './modules/projects-filter';
 import { animateProjectItems } from './modules/projects-animate';
-import { projectSlider } from './modules/slider-block';
+import { sliderBlock } from './modules/slider-block';
+import { relatedProjectsCarousel } from './modules/related-projects-carousel';
 
 const controllersMap = new WeakMap(); // key: root(container), value: controllers[]
 
@@ -67,8 +68,11 @@ function init(root = document) {
     )
   );
 
-  // Project slider
-  controllers.push(asController(projectSlider(root)));
+  // Slider block
+  controllers.push(asController(sliderBlock(root)));
+
+  // Related products
+  controllers.push(asController(relatedProjectsCarousel(root)));
 
   // Limpieza de nulls
   const cleaned = controllers.filter(Boolean);

@@ -13,14 +13,13 @@
 ?>
 
         <div class="project-single">
+
             <?php require TD . '/template-parts/modules/project-modules.php'; ?>
 
-            <section class="project-single__related">
-                <!-- Parte 3: related projects -->
-            </section>
+            <?php require TD . '/template-parts/components/molecules/related-projects.php'; ?>
 
         </div>
 
-    <?php endwhile; endif;
+<?php endwhile; endif;
 
-get_footer();
+    get_footer();

@@ -11,7 +11,10 @@
     $layout = $args['layout'] ?? '';
     $attrs = layout_control_attrs( $layout , 'layout-control', $layout );
 
-    $slider_block = get_sub_field('text_block');
+    print_r( $layout );
+
+    $slider_block = get_sub_field('slider_block');
+
 
     if ( !isset( $slider_block[ 'items' ] ) || empty( $slider_block[ 'items' ] ) ) return;
 

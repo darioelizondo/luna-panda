@@ -1,0 +1,119 @@
+@use '../@config/index';
+
+// Related projects
+.project-related {
+    padding-top: calc( index.$lh * 6 );
+
+    @include index.l {
+        padding-top: calc( index.$lh * 9 );
+    }
+
+    @include index.xl {
+        padding-top: calc( index.$lh * 10 );
+    }
+
+    @include index.xxl {
+        padding-top: calc( index.$lh * 12 );
+    }
+
+    // Inner
+    &__inner {
+
+        @include index.l {
+            display: grid;
+            grid-template-columns: repeat( 12, minmax( 0, 1fr ) );
+            gap: calc( index.$lh * 1.5 );
+        }
+
+    }
+
+    // Header
+    &__header {
+        margin-bottom: calc( index.$lh * 1.5 );
+
+        @include index.l {
+            margin-bottom: 0;
+            grid-column: 3 / 12;
+        }
+    }
+
+    // Carousel
+    &__carousel {
+        position: relative;
+
+        @include index.l {
+            grid-column: 3 / 12;
+        }
+    }
+
+    // Grid
+    &__grid {
+        @include index.l {
+            display: grid;
+            grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
+            gap: index.$lh;
+        }
+    }
+
+    // Item
+    &__item {
+        @include index.l {
+            width: auto !important;
+        }
+    }
+
+    // Link
+    &__link {
+        display: block;
+        text-decoration: none;
+    }
+
+    // Media
+    &__media {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    // Image
+    &__img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: calc( index.$lh / 2 );
+    }
+
+    // Title
+    &__title {
+        color: index.$primary;
+        font-family: index.$font-primary;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 700;
+        font-style: italic;
+
+        @include index.l {
+            font-size: 22px;
+            line-height: 28px;
+        }
+
+        @include index.xl {
+            font-size: 26px;
+            line-height: 30px;
+        }
+
+        @include index.xxl {
+            font-size: 32px;
+            line-height: 36px;
+        }
+
+    }
+
+    // Card title
+    &__card-title {
+        color: index.$soft-primary;
+        font-family: index.$font-primary;
+        margin-top: 12px;
+    }
+
+}
