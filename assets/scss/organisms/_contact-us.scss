@@ -1,0 +1,268 @@
+@use '../@config/index';
+
+// Contact us
+.contact-us {
+    min-height: 100vh;
+    padding-top: calc( index.$lh * 10 );
+
+    @include index.l {
+        grid-column: span 12;
+        padding-top: calc( index.$lh * 2 );
+    }
+
+    @include index.xl {
+        padding-top: calc( index.$lh * 3 );
+    }
+
+    @include index.xxl {
+        padding-top: calc( index.$lh * 4 );
+    }
+
+    // Inner
+    &__inner {
+        display: grid;
+        gap: index.$lh;
+
+        @include index.l {
+            display: grid;
+            grid-template-columns: repeat( 12, minmax( 0, 1fr ) );
+        }
+
+    }
+
+    // Wrapper text
+    &__wrapper-text {
+        @include index.l {
+            grid-column: 3 / span 8;
+        }
+    }
+
+    &__text p {
+        color: index.$soft-primary !important;
+        font-size: 16px !important;
+        line-height: 22px !important;
+        font-style: italic !important;
+
+        @include index.l {
+            font-size: 15px !important;
+            line-height: 21px !important;
+        }
+
+        @include index.xl {
+            font-size: 16px !important;
+            line-height: 22px !important;
+        }
+
+        @include index.xxl {
+            font-size: 19px !important;
+            line-height: 25px !important;
+        }
+
+    }
+
+    // Wrapper form
+    &__wrapper-form {
+        margin-top: calc( index.$lh * 2 );
+
+        @include index.l {
+            grid-column: 3 / span 7;
+        }
+
+        @include index.xl {
+            grid-column: 3 / span 6;
+        }
+
+        @include index.xxl {
+            grid-column: 3 / span 5;
+        }
+    }
+    
+    // Form
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: index.$lh;
+
+        @include index.l {
+            display: block;
+        }
+
+    }
+
+    // Group
+    &__group p {
+        display: flex;
+        flex-direction: column;
+
+        @include index.l {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr 1fr;
+            gap: calc( index.$lh / 4 );
+            align-items: flex-end;
+        }
+
+         @include index.xl {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr 1fr;
+        }
+
+        @include index.xxl {
+            display: grid;
+            grid-template-columns: 1fr auto  1fr 1fr 1fr;
+        }
+
+    }
+
+    // Label
+    &__label {
+        color: index.$soft-primary;
+        font-size: 14px;
+        line-height: 20px;
+        font-style: italic;
+
+        @include index.l {
+            font-size: 15px;
+            line-height: 21px;
+        }
+
+        @include index.xl {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+    }
+
+    &__label-textarea {
+        align-self: flex-start;
+        margin-top: 20px;
+    }
+
+    // Input
+    .wpcf7-form-control-wrap,
+    input {
+        width: auto;
+
+        @include index.l {
+            width: 100%;
+        }
+
+    }
+
+    .wpcf7-form-control-wrap {
+        @include index.l {
+            grid-column: 3 / span 2;
+        }
+
+        @include index.xl {
+            grid-column: 3 / span 2;
+        }
+
+        @include index.xxl {
+            grid-column: 3 / span 3;
+        }
+    }
+
+    input,
+    textarea {
+        // width: 100%;
+        padding: calc( index.$lh / 3 ) calc( index.$lh / 2 );
+        background-color: transparent;
+        border: none;
+        border-bottom: solid 1px index.$soft-primary;
+        color: index.$soft-primary;
+        font-size: 16px;
+        line-height: 22px;
+
+        @include index.l {
+            font-size: 15px ;
+            line-height: 21px;
+        }
+
+        @include index.xl {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        @include index.xxl {
+            font-size: 19px;
+            line-height: 25px;
+        }
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    // Submit
+    &__wrapper-submit p {
+        display: flex;
+        flex-direction: column;
+        gap: index.$lh;
+
+        @include index.l {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr 1fr;
+            gap: calc( index.$lh / 4 );
+        }
+
+         @include index.xl {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr 1fr;
+        }
+
+        @include index.xxl {
+            display: grid;
+            grid-template-columns: 1fr auto  1fr 1fr 1fr;
+        }
+    }
+
+    &__submit {
+        display: inline-block !important;
+        width: auto !important;
+        padding: calc( index.$lh / 3 ) 0 !important;
+        color: index.$primary !important;
+        font-size: 16px !important;
+        line-height: 1 !important;
+        font-style: italic !important;
+        text-decoration: none !important;
+        position: relative !important;
+        transition: color .3s ease !important;
+        border: none !important;
+        cursor: pointer !important;
+        margin: index.$lh 0 !important;
+        text-align: left !important;
+            
+        @include index.l {
+            grid-column: 3 / span 2;
+            width: auto !important;
+            padding: calc( index.$lh / 12 ) 0 !important;
+            font-size: 15px !important;
+        }
+
+        @include index.xl {
+            grid-column: 3 / span 2;
+            font-size: 16px !important;
+        }
+
+        @include index.xxl {
+            grid-column: 3 / span 3;
+            font-size: 19px !important;
+        }
+
+        &:hover {
+            color: index.$white !important;
+        }
+
+        &:focus,
+        &:focus-within,
+        &:active {
+            background-color: transparent !important;
+        }
+    }
+
+    // Message CF7
+    .wpcf7-response-output {
+        color: index.$white !important;
+    }
+
+}

@@ -3,7 +3,7 @@
 // About us
 .about-us {
     min-height: 100vh;
-    padding-top: calc( index.$lh * 2 );
+    padding-top: calc( index.$lh * 4 );
 
     @include index.l {
         grid-column: span 12;
