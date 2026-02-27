@@ -298,6 +298,24 @@ button:focus {
 
 }
 
+// General styles
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	text-align: center;
+	float: none;
+}
+
+strong, bold {
+	font-weight: 700;
+}
+
 // Barba
 .site-wrapper {
 	position: relative;

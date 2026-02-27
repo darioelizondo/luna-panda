@@ -1,11 +1,11 @@
 {
-    "key": "group_69756f842d4ef",
-    "title": "@Modules",
+    "key": "group_69a0e7571d740",
+    "title": "@Page modules",
     "fields": [
         {
-            "key": "field_69756f850719c",
-            "label": "Modules",
-            "name": "modules",
+            "key": "field_69a0e7572339b",
+            "label": "Page modules",
+            "name": "page_modules",
             "aria-label": "",
             "type": "flexible_content",
             "instructions": "",
@@ -17,16 +17,16 @@
                 "id": ""
             },
             "layouts": {
-                "layout_69756f90cf0f7": {
-                    "key": "layout_69756f90cf0f7",
-                    "name": "hero",
-                    "label": "Hero",
+                "layout_699a2ce559413": {
+                    "key": "layout_699a2ce559413",
+                    "name": "text_block",
+                    "label": "Text block",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_6975736af9622",
-                            "label": "Hero",
-                            "name": "hero",
+                            "key": "field_69a0e7572add5",
+                            "label": "Text block",
+                            "name": "text_block",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -38,7 +38,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_69756fae327fa"
+                                "group_699a2c5972cb2"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -49,16 +49,16 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_69850d12ce27b": {
-                    "key": "layout_69850d12ce27b",
-                    "name": "projects_home",
-                    "label": "Projects home",
+                "layout_699e523d99277": {
+                    "key": "layout_699e523d99277",
+                    "name": "image_block",
+                    "label": "Image block",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_69850d1cce27e",
-                            "label": "Projects home",
-                            "name": "projects_home",
+                            "key": "field_69a0e7572e8c2",
+                            "label": "Image block",
+                            "name": "image_block",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -70,7 +70,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_69841bf593173"
+                                "group_699e3d4be337f"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -81,16 +81,16 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_6987bd0f14260": {
-                    "key": "layout_6987bd0f14260",
-                    "name": "logos_carousel",
-                    "label": "Logos carousel",
+                "layout_699fd16565a0e": {
+                    "key": "layout_699fd16565a0e",
+                    "name": "slider_block",
+                    "label": "Slider block",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_6987bd1314263",
-                            "label": "Logos carousel",
-                            "name": "logos_carousel",
+                            "key": "field_69a0e75732253",
+                            "label": "Slider block",
+                            "name": "slider_block",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -102,7 +102,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_6987bca76ea5f"
+                                "group_699fcfe030886"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -122,25 +122,23 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "7"
+                "value": "templates\/page-about-us.php"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 2,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "the_content",
-        "excerpt",
-        "featured_image"
+        "the_content"
     ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772152711
+    "modified": 1772153730
 }
