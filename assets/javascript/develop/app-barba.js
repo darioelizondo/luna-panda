@@ -48,12 +48,12 @@ const AppBarba = () => {
   };
 
   const isHomePath = (path = '') => {
-    return normalizePath(path) === '/';
+    return normalizePath(path) === '/lunapanda';
   };
 
   const isContactPath = (path = '') => {
     // Si tu slug cambiara, ajustá esta parte.
-    return normalizePath(path) === '/contact';
+    return normalizePath(path) === '/lunapanda/contact';
   };
 
   const getNamespace = (view) => {
