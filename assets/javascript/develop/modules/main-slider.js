@@ -16,7 +16,7 @@ export const mainSlider = (root = document) => {
       swiper = new Swiper(currentSlider, {
         speed: 1200,
         autoplay: {
-          delay: 7000,
+          delay: 6000,
           disableOnInteraction: false,
         },
         loop: true,

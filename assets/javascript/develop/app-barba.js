@@ -26,6 +26,91 @@ const AppBarba = () => {
   let cleanupScroll = null;
   let homeSnap = null;
 
+  // Guardamos el path del siguiente destino, que sí suele estar disponible antes del leave
+  let pendingNextPath = '';
+  let pendingNextNamespace = '';
+
+  const wait = (s) => new Promise((r) => setTimeout(r, s * 1000));
+  const isMobileHeaderMode = () => window.matchMedia('(max-width: 767px)').matches;
+
+  const normalizePath = (path = '') => {
+    if (!path) return '/';
+    try {
+      const url = new URL(path, window.location.origin);
+      let pathname = url.pathname || '/';
+      pathname = pathname.replace(/\/+$/, '');
+      return pathname === '' ? '/' : pathname;
+    } catch (e) {
+      let pathname = path.split('?')[0].split('#')[0] || '/';
+      pathname = pathname.replace(/\/+$/, '');
+      return pathname === '' ? '/' : pathname;
+    }
+  };
+
+  const isHomePath = (path = '') => {
+    return normalizePath(path) === '/';
+  };
+
+  const isContactPath = (path = '') => {
+    // Si tu slug cambiara, ajustá esta parte.
+    return normalizePath(path) === '/contact';
+  };
+
+  const getNamespace = (view) => {
+    if (!view) return 'default';
+
+    if (view.namespace) return view.namespace;
+
+    if (view.container?.dataset?.barbaNamespace) {
+      return view.container.dataset.barbaNamespace;
+    }
+
+    if (typeof view.html === 'string') {
+      const match = view.html.match(/data-barba-namespace=["']([^"']+)["']/i);
+      if (match && match[1]) return match[1];
+    }
+
+    return 'default';
+  };
+
+  /**
+   * Reglas de expansión por namespace
+   * - home: expandido siempre
+   * - contact: expandido solo en desktop
+   * - resto: compacto
+   */
+  const shouldExpandHeader = (namespace) => {
+    if (namespace === 'home') return true;
+    if (namespace === 'contact' && !isMobileHeaderMode()) return true;
+    return false;
+  };
+
+  /**
+   * Reglas de expansión por path/namespace de destino.
+   * Esto se usa en leave(), donde el namespace puede no estar listo.
+   */
+  const shouldExpandTarget = ({ namespace = '', path = '' } = {}) => {
+    // Si namespace está disponible, usamos eso primero
+    if (namespace) {
+      if (namespace === 'home') return true;
+      if (namespace === 'contact' && !isMobileHeaderMode()) return true;
+    }
+
+    // Fallback por path
+    if (isHomePath(path)) return true;
+    if (isContactPath(path) && !isMobileHeaderMode()) return true;
+
+    return false;
+  };
+
+  /**
+   * Solo Home responde al scroll para expandir/compactar.
+   * Contact desktop queda expandido fijo.
+   */
+  const shouldBindHeaderScroll = (namespace) => {
+    return namespace === 'home';
+  };
+
   const scrollToTopSmooth = (duration = 0.35) => {
     const state = { y: window.scrollY };
     return gsap.to(state, {
@@ -43,21 +128,25 @@ const AppBarba = () => {
     if (namespace !== 'home') return;
 
     homeSnap = createHomeHeroSnap(document, {
-      duration: 0.5,
-      threshold: 0.18,
+      duration: 0.1,
+      threshold: 0.9,
     });
   };
 
-  const applyHeaderStateByNamespace = (namespace, { animateOnHomeEnter = false } = {}) => {
+  const applyHeaderStateByNamespace = (
+    namespace,
+    { animateExpandOnEnter = false } = {}
+  ) => {
     cleanupScroll?.();
     cleanupScroll = null;
 
-    const allowExpandOnTop = namespace === 'home';
+    const shouldExpand = shouldExpandHeader(namespace);
+    const bindScroll = shouldBindHeaderScroll(namespace);
 
-    if (namespace === 'home') {
-      if (animateOnHomeEnter) {
+    if (shouldExpand) {
+      if (animateExpandOnEnter) {
         headerCtrl?.setCompact(true, { immediate: true });
-        headerCtrl?.setCompact(false, { immediate: false }); // animado
+        headerCtrl?.setCompact(false, { immediate: false });
       } else {
         headerCtrl?.setCompact(false, { immediate: true });
       }
@@ -65,8 +154,9 @@ const AppBarba = () => {
       headerCtrl?.setCompact(true, { immediate: true });
     }
 
-    // bind binario por scroll (RAF)
-    cleanupScroll = bindHeaderToScroll(headerCtrl, 40, { allowExpandOnTop });
+    if (bindScroll) {
+      cleanupScroll = bindHeaderToScroll(headerCtrl, 40, { allowExpandOnTop: true });
+    }
   };
 
   const initHeaderOnce = () => {
@@ -75,24 +165,26 @@ const AppBarba = () => {
     headerCtrl = createHeaderController();
 
     const initialNs = container.getAttribute('data-barba-namespace') || 'default';
-    applyHeaderStateByNamespace(initialNs, { animateOnHomeEnter: false });
+    applyHeaderStateByNamespace(initialNs, { animateExpandOnEnter: false });
     applyHomeSnapByNamespace(initialNs);
   };
 
   initHeaderOnce();
 
-  // Logo intro (solo primera vez)
   const runLogoIntroOnce = () => {
     if (runLogoIntroOnce._played) return;
     runLogoIntroOnce._played = true;
 
     const ns = container.getAttribute('data-barba-namespace') || 'default';
+    const shouldExpand = shouldExpandHeader(ns);
 
-    // Mantener estado correcto (no “forzar home” en internas)
-    headerCtrl?.setCompact(ns === 'home' ? false : true, { immediate: true });
+    headerCtrl?.setCompact(!shouldExpand, { immediate: true });
 
     const tl = playLogoIntro();
-    const applyFinalState = () => headerCtrl?.setCompact(ns === 'home' ? false : true, { immediate: true });
+
+    const applyFinalState = () => {
+      headerCtrl?.setCompact(!shouldExpandHeader(ns), { immediate: true });
+    };
 
     if (tl) tl.eventCallback('onComplete', applyFinalState);
     else applyFinalState();
@@ -106,6 +198,11 @@ const AppBarba = () => {
       {
         name: 'fade',
 
+        before(data) {
+          pendingNextPath = data?.next?.url?.path || '';
+          pendingNextNamespace = getNamespace(data?.next);
+        },
+
         beforeEnter(data) {
           const activeClass = 'current_page_item';
           document.querySelectorAll('.menu-item').forEach((item) => item.classList.remove(activeClass));
@@ -116,24 +213,31 @@ const AppBarba = () => {
         },
 
         leave: async ({ current }) => {
-          const wait = (s) => new Promise((r) => setTimeout(r, s * 1000));
-
-          // matar snap
           homeSnap?.destroy?.();
           homeSnap = null;
 
-          // desactivar header scroll
           cleanupScroll?.();
           cleanupScroll = null;
 
-          const leavingNs =
-            current?.namespace || current?.container?.dataset?.barbaNamespace || 'default';
+          const leavingNs = getNamespace(current);
 
-          // animate shrink only when leaving home
-          if (leavingNs === 'home') {
+          const leavingExpanded = shouldExpandHeader(leavingNs);
+          const nextExpanded = shouldExpandTarget({
+            namespace: pendingNextNamespace,
+            path: pendingNextPath,
+          });
+
+          /**
+           * Casos:
+           * - expandido -> expandido : NO hacer nada
+           * - expandido -> compacto  : compactar animado
+           * - compacto -> expandido  : no hacer nada acá
+           * - compacto -> compacto   : asegurar compacto inmediato
+           */
+          if (leavingExpanded && !nextExpanded) {
             headerCtrl?.setCompact(true, { immediate: false });
             await wait(0.18);
-          } else {
+          } else if (!leavingExpanded && !nextExpanded) {
             headerCtrl?.setCompact(true, { immediate: true });
           }
 
@@ -149,10 +253,13 @@ const AppBarba = () => {
           });
         },
 
-
         enter({ next }) {
           gsap.set(next.container, { opacity: 0 });
-          return gsap.to(next.container, { opacity: 1, duration: 0.5, ease: 'power1.out' });
+          return gsap.to(next.container, {
+            opacity: 1,
+            duration: 0.5,
+            ease: 'power1.out',
+          });
         },
       },
     ],
@@ -161,8 +268,8 @@ const AppBarba = () => {
   barba.hooks.once(({ next }) => {
     window.App?.init?.(next.container);
 
-    const ns = next?.namespace || next?.container?.dataset?.barbaNamespace || 'default';
-    applyHeaderStateByNamespace(ns, { animateOnHomeEnter: false });
+    const ns = getNamespace(next);
+    applyHeaderStateByNamespace(ns, { animateExpandOnEnter: false });
     applyHomeSnapByNamespace(ns);
   });
 
@@ -176,13 +283,20 @@ const AppBarba = () => {
   barba.hooks.afterEnter(({ next, current }) => {
     window.App?.init?.(next.container);
 
-    const ns = next?.namespace || next?.container?.dataset?.barbaNamespace || 'default';
-    const prevNs = current?.namespace || current?.container?.dataset?.barbaNamespace || 'default';
+    const ns = getNamespace(next);
+    const prevNs = getNamespace(current);
 
-    const animateOnHomeEnter = prevNs !== 'home' && ns === 'home';
+    const prevExpanded = shouldExpandHeader(prevNs);
+    const nextExpanded = shouldExpandHeader(ns);
 
-    applyHeaderStateByNamespace(ns, { animateOnHomeEnter });
+    // Solo animar expansión si venimos de compacta a expandida
+    const animateExpandOnEnter = !prevExpanded && nextExpanded;
+
+    applyHeaderStateByNamespace(ns, { animateExpandOnEnter });
     applyHomeSnapByNamespace(ns);
+
+    pendingNextPath = '';
+    pendingNextNamespace = '';
   });
 };
 

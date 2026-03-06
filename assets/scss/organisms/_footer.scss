@@ -77,23 +77,18 @@
     // Carousel title
     &__carousel-title {
         color: index.$soft-primary;
-        font-size: 13px;
-        line-height: 17px;
+        font-size: 14px;
+        line-height: 20px;
         font-weight: 700;
 
         @include index.l {
-            font-size: 14px;
-            line-height: 20px;
-        }
-
-        @include index.xl {
-            font-size: 15px;
-            line-height: 21px;
+            font-size: 16px;
+            line-height: 22px;
         }
 
         @include index.xxl {
-            font-size: 16px;
-            line-height: 22px;
+            font-size: 19px;
+            line-height: 25px;
         }
     }
 

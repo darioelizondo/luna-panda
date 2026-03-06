@@ -3,30 +3,55 @@
 // Project single
 .project-single {
     min-height: 100vh;
-    padding-top: calc( index.$lh * 2 );
-
-    @include index.l {
-        grid-column: span 12;
-        padding-top: calc( index.$lh * 2 );
-    }
-
-    @include index.xl {
-        padding-top: calc( index.$lh * 3 );
-    }
-
-    @include index.xxl {
-        padding-top: calc( index.$lh * 4 );
-    }
 
     // Inner
     &__inner {
         display: grid;
         grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
         gap: index.$lh;
+        padding-left: 75px;
 
         @include index.l {
             display: grid;
             grid-template-columns: repeat( 12, minmax( 0, 1fr ) );
+            padding-left: 0;
+        }
+    }
+
+    // Inner filters
+    &__inner-filters {
+        display: grid;
+        grid-template-columns: repeat( 1, minmax( 0, 1fr ) );
+        gap: index.$lh;
+
+        @include index.l {
+            display: grid;
+            grid-template-columns: repeat( 12, minmax( 0, 1fr ) );
+        }
+    }
+
+    // Project filters
+    .projects-filters {
+        display: flex;
+        gap: index.$lh;
+       
+    }
+
+    // Wrapper
+    &__wrapper {
+        padding-top: calc( index.$lh * 2 );
+
+        @include index.l {
+            grid-column: span 12;
+            padding-top: calc( index.$lh * 2 );
+        }
+
+        @include index.xl {
+            padding-top: calc( index.$lh * 3 );
+        }
+
+        @include index.xxl {
+            padding-top: calc( index.$lh * 4 );
         }
     }
 

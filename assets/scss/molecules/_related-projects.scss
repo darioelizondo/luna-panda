@@ -18,11 +18,13 @@
 
     // Inner
     &__inner {
+        padding-left: 75px;
 
         @include index.l {
             display: grid;
             grid-template-columns: repeat( 12, minmax( 0, 1fr ) );
             gap: calc( index.$lh * 1.5 );
+            padding-left: 0;
         }
 
     }
@@ -87,24 +89,19 @@
     &__title {
         color: index.$primary;
         font-family: index.$font-primary;
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 20px;
         font-weight: 700;
         font-style: italic;
 
         @include index.l {
-            font-size: 22px;
-            line-height: 28px;
-        }
-
-        @include index.xl {
-            font-size: 26px;
-            line-height: 30px;
+            font-size: 16px;
+            line-height: 22px;
         }
 
         @include index.xxl {
-            font-size: 32px;
-            line-height: 36px;
+            font-size: 19px;
+            line-height: 25px;
         }
 
     }
@@ -113,7 +110,20 @@
     &__card-title {
         color: index.$soft-primary;
         font-family: index.$font-primary;
+        font-size: 14px;
+        line-height: 20px;
         margin-top: 12px;
+
+        @include index.l {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        @include index.xxl {
+            font-size: 19px;
+            line-height: 25px;
+        }
+
     }
 
 }

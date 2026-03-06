@@ -55,26 +55,29 @@
         position: relative;
         font-family: index.$font-primary;
         font-style: italic;
-        font-size: 13px;
+        font-size: 14px;
         line-height: 1;
-        padding: calc( index.$lh / 3 ) 0;
+        padding-bottom: 3.25px;
         transition: color .3s ease;
+        color: index.$primary;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
 
         &:hover {
             color: index.$white
         }
 
-        @include index.l {
-            font-size: 15px;
-            padding: calc( index.$lh / 12 ) 0;
+        &:focus {
+            outline: none;
         }
 
-        @include index.xl {
-             font-size: 16px;
+        @include index.l {
+            font-size: 16px;
         }
 
         @include index.xxl {
-             font-size: 19px;
+            font-size: 19px;
         }
 
         &.is-active {
@@ -93,6 +96,29 @@
                 right: -30px;
                 font-size: 17px;
             }
+        }
+
+    }
+
+}
+
+.project-filters__current-project {
+    width: 100%;
+
+    // Title
+    .projects-filters__current-title {
+        color: index.$white;
+        font-family: index.$font-primary;
+        font-style: italic;
+        font-size: 14px;
+        line-height: 1;
+
+        @include index.l {
+            font-size: 16px;
+        }
+
+        @include index.xxl {
+            font-size: 19px;
         }
 
     }

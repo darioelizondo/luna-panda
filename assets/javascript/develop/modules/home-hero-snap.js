@@ -5,17 +5,17 @@ export const createHomeHeroSnap = (root = document, opts = {}) => {
   const {
     heroSelector = '[data-hero]',
     nextSelector = '[data-projects-home]',
-    duration = 0.65,
-    threshold = 0.18,
-    ease = 'power2.out',
+    duration = 0.1,
+    threshold = 0.1,
+    ease = 'power0',
     desktopBreakpoint = 1024,
 
     // Trackpad-friendly intent
-    intentDelta = 35,     // más sensible (antes 60)
+    intentDelta = 25,     // más sensible (antes 60)
     intentResetMs = 180,  // ventana un poco mayor
 
     // Anti-rebote post-snap
-    cooldownMs = 220,
+    cooldownMs = 500,
   } = opts;
 
   const hero = root.querySelector(heroSelector);

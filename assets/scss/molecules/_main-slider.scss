@@ -35,7 +35,7 @@
         &.swiper-slide-active .main-slider__image,
         &.swiper-slide-duplicate-active .main-slider__image {
             transform: scale(1); // Smooth zoom in
-            transition: transform 7s ease-out;
+            transition: transform 8s linear;
         }
 
         &.swiper-slide-prev .main-slider__image,

@@ -15,7 +15,7 @@
         // gap: calc( index.$lh / 2 );
 
         display: flex;
-        align-items: center;
+        // align-items: center;
         justify-content: space-between;
         gap: calc( index.$lh / 2 );
 
@@ -31,7 +31,7 @@
         grid-column: span var(--i-m-logospan, 1);
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
 
         @include index.l {
             grid-column: span var(--i-logospan, 1);
@@ -54,20 +54,18 @@
 
     &__title {
         color: index.$primary;
-        font-size: 16px;
-        line-height: 1.2;
+        font-size: 14px;
+        line-height: 20px;
         font-style: italic;
 
         @include index.l {
-            font-size: 15px;
-        }
-
-        @include index.xl {
-             font-size: 16px;
+            font-size: 16px;
+            line-height: 22px;
         }
 
         @include index.xxl {
-             font-size: 19px;
+            font-size: 19px;
+            line-height: 25px;
         }
 
     }
@@ -81,19 +79,17 @@
     &__category {
         color: index.$soft-primary;
         font-size: 14px;
-        line-height: 1;
+        line-height: 20px;
         font-style: italic;
 
         @include index.l {
-            font-size: 13px;
-        }
-
-        @include index.xl {
-             font-size: 14px;
+            font-size: 16px;
+            line-height: 22px;
         }
 
         @include index.xxl {
-             font-size: 16px;
+            font-size: 19px;
+            line-height: 25px;
         }
 
     }
@@ -103,12 +99,14 @@
     &__short-line-button {
         grid-column: span var(--i-m-shortbuttonspan, 1);
         display: flex;
+        justify-content: center;
         flex-direction: column;
         gap: calc( index.$lh / 3 );
 
         @include index.l {
             grid-column: span var(--i-shortbuttonspan, 1);
             gap: calc( index.$lh / 2 );
+            justify-content: flex-start;
         }
 
     }
@@ -117,41 +115,37 @@
         display: none;
         color: index.$soft-primary;
         font-size: 14px;
-        line-height: 1;
+        line-height: 20px;
         font-style: italic;
 
         @include index.l {
             display: block;
-            font-size: 13px;
-        }
-
-        @include index.xl {
-             font-size: 14px;
+            font-size: 16px;
+            line-height: 22px;
         }
 
         @include index.xxl {
-             font-size: 16px;
+            font-size: 19px;
+            line-height: 25px;
         }
     }
 
     &__button {
         color: index.$primary;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1;
         font-style: italic;
         transition: .3s ease;
         white-space: nowrap;
 
-        @include index.l {
-            font-size: 15px;
-        }
-
-        @include index.xl {
-             font-size: 16px;
+         @include index.l {
+            font-size: 16px;
+            line-height: 22px;
         }
 
         @include index.xxl {
-             font-size: 19px;
+            font-size: 19px;
+            line-height: 25px;
         }
 
         &:hover {

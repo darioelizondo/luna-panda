@@ -14,9 +14,14 @@
 
         <div class="project-single">
 
-            <?php require TD . '/template-parts/modules/project-modules.php'; ?>
+            <div class="project-single__inner-filters container">
+                <?php get_template_part( 'template-parts/components/organisms/projects-filters' ); ?>
+            </div>
 
-            <?php require TD . '/template-parts/components/molecules/related-projects.php'; ?>
+            <div class="project-single__wrapper">
+                <?php require TD . '/template-parts/modules/project-modules.php'; ?>
+                <?php require TD . '/template-parts/components/molecules/related-projects.php'; ?>
+            </div>
 
         </div>
 

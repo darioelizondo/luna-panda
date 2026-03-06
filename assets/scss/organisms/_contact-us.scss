@@ -3,29 +3,45 @@
 // Contact us
 .contact-us {
     min-height: 100vh;
-    padding-top: calc( index.$lh * 10 );
+    padding-top: 180px;
+
+    @include index.m {
+        padding-top: 235px;
+        min-height: 0;
+        max-height: 100vh;
+        overflow: hidden;
+    }
 
     @include index.l {
         grid-column: span 12;
-        padding-top: calc( index.$lh * 2 );
+        padding-top: 279px;
     }
 
     @include index.xl {
-        padding-top: calc( index.$lh * 3 );
+         padding-top: 193px;
     }
 
     @include index.xxl {
-        padding-top: calc( index.$lh * 4 );
+        padding-top: 223px;
+    }
+
+    // Footer
+    & + .footer {
+        @include index.l {
+            display: none;
+        }
     }
 
     // Inner
     &__inner {
         display: grid;
         gap: index.$lh;
+        padding-left: 75px;
 
         @include index.l {
             display: grid;
             grid-template-columns: repeat( 12, minmax( 0, 1fr ) );
+            padding-left: 0;
         }
 
     }
@@ -33,22 +49,17 @@
     // Wrapper text
     &__wrapper-text {
         @include index.l {
-            grid-column: 3 / span 8;
+            grid-column: 7 / span 5;
         }
     }
 
     &__text p {
         color: index.$soft-primary !important;
-        font-size: 16px !important;
-        line-height: 22px !important;
+        font-size: 14px !important;
+        line-height: 20px !important;
         font-style: italic !important;
 
         @include index.l {
-            font-size: 15px !important;
-            line-height: 21px !important;
-        }
-
-        @include index.xl {
             font-size: 16px !important;
             line-height: 22px !important;
         }
@@ -65,16 +76,16 @@
         margin-top: calc( index.$lh * 2 );
 
         @include index.l {
-            grid-column: 3 / span 7;
+            grid-column: 7 / span 5;
         }
 
-        @include index.xl {
-            grid-column: 3 / span 6;
-        }
+        // @include index.xl {
+        //     grid-column: 3 / span 6;
+        // }
 
-        @include index.xxl {
-            grid-column: 3 / span 5;
-        }
+        // @include index.xxl {
+        //     grid-column: 3 / span 5;
+        // }
     }
     
     // Form
@@ -121,13 +132,13 @@
         font-style: italic;
 
         @include index.l {
-            font-size: 15px;
-            line-height: 21px;
-        }
-
-        @include index.xl {
             font-size: 16px;
             line-height: 22px;
+        }
+
+        @include index.xxl {
+            font-size: 19px;
+            line-height: 25px;
         }
 
     }
@@ -141,9 +152,11 @@
     .wpcf7-form-control-wrap,
     input {
         width: auto;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
 
         @include index.l {
-            width: 100%;
         }
 
     }
@@ -170,16 +183,11 @@
         border: none;
         border-bottom: solid 1px index.$soft-primary;
         color: index.$soft-primary;
-        font-size: 16px;
-        line-height: 22px;
+        font-size: 14px;
+        line-height: 20px;
 
         @include index.l {
-            font-size: 15px ;
-            line-height: 21px;
-        }
-
-        @include index.xl {
-            font-size: 16px;
+            font-size: 16px ;
             line-height: 22px;
         }
 
@@ -221,8 +229,8 @@
         width: auto !important;
         padding: calc( index.$lh / 3 ) 0 !important;
         color: index.$primary !important;
-        font-size: 16px !important;
-        line-height: 1 !important;
+        font-size: 14px !important;
+        line-height: 20px !important;
         font-style: italic !important;
         text-decoration: none !important;
         position: relative !important;
@@ -236,7 +244,8 @@
             grid-column: 3 / span 2;
             width: auto !important;
             padding: calc( index.$lh / 12 ) 0 !important;
-            font-size: 15px !important;
+            font-size: 16px !important;
+            line-height: 22px !important;;
         }
 
         @include index.xl {
@@ -247,6 +256,7 @@
         @include index.xxl {
             grid-column: 3 / span 3;
             font-size: 19px !important;
+            line-height: 25px !important;
         }
 
         &:hover {

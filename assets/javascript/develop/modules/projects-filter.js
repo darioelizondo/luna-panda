@@ -1,11 +1,19 @@
 // modules/projects-filter.js
 export function createProjectsFilter(root = document, opts = {}) {
   const filters = root.querySelector('[data-projects-filters]');
+  if (!filters) return null;
+
+  const filterMode = filters.getAttribute('data-filter-mode') || 'ajax';
+
+  // Si no estamos en modo AJAX, no inicializamos nada.
+  // En single-project los links navegan normalmente.
+  if (filterMode !== 'ajax') return null;
+
   const results = root.querySelector('[data-projects-results]');
   const loader = root.querySelector('[data-projects-loader]');
   const sentinel = root.querySelector('[data-infinite-sentinel]');
 
-  if (!filters || !results) return null;
+  if (!results) return null;
   if (!window.DE_PROJECTS?.ajaxUrl || !window.DE_PROJECTS?.nonce) return null;
 
   const {
@@ -13,8 +21,8 @@ export function createProjectsFilter(root = document, opts = {}) {
     activeClass = 'is-active',
     paramName = 'cat',
     rootMargin = '300px',
-    onAfterReplace = null, // animate all items
-    onAfterAppend = null,  // animate appended items
+    onAfterReplace = null,
+    onAfterAppend = null,
   } = opts;
 
   let abortCtrl = null;
@@ -167,12 +175,9 @@ export function createProjectsFilter(root = document, opts = {}) {
   const init = async () => {
     filters.addEventListener('click', onClick);
 
-    // Term inicial: URL param o data-term desde PHP
     const fromUrl = readUrlParam();
-    const fromData = results.getAttribute('data-term') || '';
-    const initialTerm = fromUrl || fromData || '';
+    const initialTerm = fromUrl || '';
 
-    // IMPORTANTE: siempre cargamos por AJAX al entrar.
     await loadFirstPage(initialTerm);
   };
 

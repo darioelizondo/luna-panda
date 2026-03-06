@@ -35,11 +35,11 @@
                   Counter
                   <div class="loader__counter">
                     <span data-loader-percent>0%</span>
-                </div>
+                </div> 
             </div>
             <canvas id="burn-canvas"></canvas>
-        </div> -->
-        <!-- End loader -->
+        </div>
+        End loader -->
 
         <?php include TD . '/template-parts/components/organisms/header.php'; ?>
 
@@ -48,6 +48,7 @@
                 function getCurrentNamespace() {
                     if ( is_front_page() ) return 'home';
                     if ( is_page_template( 'templates/page-projects.php' ) ) return 'projects';
+                    if ( is_page_template( 'templates/page-contact.php' ) ) return 'contact';
                     if ( is_singular( 'project' ) ) return 'projects';
                     return 'inner';
                 }

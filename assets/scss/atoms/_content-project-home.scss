@@ -40,23 +40,18 @@
     // Title
     &__title {
         color: index.$soft-primary;
-        font-size: 15px;
-        line-height: 21px;
+        font-size: 14px;
+        line-height: 20px;
         font-style: italic;
 
         @include index.l {
-            font-size: 17px;
-            line-height: 23px;
-        }
-
-        @include index.xl {
-            font-size: 18px;
-            line-height: 24px;
+            font-size: 16px;
+            line-height: 22px;
         }
 
         @include index.xxl {
-            font-size: 20px;
-            line-height: 26px;
+            font-size: 19px;
+            line-height: 25px;
         }
 
     }
@@ -74,14 +69,9 @@
             line-height: 22px;
         }
 
-        @include index.xl {
-            font-size: 17px;
-            line-height: 23px;
-        }
-
         @include index.xxl {
-            font-size: 18px;
-            line-height: 24px;
+            font-size: 19px;
+            line-height: 25px;
         }
 
     }
@@ -89,23 +79,18 @@
     &__text,
     &__text p {
         color: index.$soft-primary;
-        font-size: 13px;
-        line-height: 18px;
+        font-size: 14px;
+        line-height: 20px;
         font-style: italic;
 
         @include index.l {
-            font-size: 14px;
-            line-height: 20px;
-        }
-
-        @include index.xl {
-            font-size: 15px;
-            line-height: 21px;
+            font-size: 16px;
+            line-height: 22px;
         }
 
         @include index.xxl {
-            font-size: 16px;
-            line-height: 22px;
+            font-size: 19px;
+            line-height: 25px;
         }
     }
 
