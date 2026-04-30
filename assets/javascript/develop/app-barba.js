@@ -178,12 +178,21 @@ const AppBarba = () => {
     const ns = container.getAttribute('data-barba-namespace') || 'default';
     const shouldExpand = shouldExpandHeader(ns);
 
-    headerCtrl?.setCompact(!shouldExpand, { immediate: true });
+    // On mobile internal pages the header must stay compact on direct loads.
+    if (!shouldExpand && isMobileHeaderMode()) {
+      headerCtrl?.setCompact(true, { immediate: true, force: true });
+      return;
+    }
+
+    headerCtrl?.setCompact(!shouldExpand, { immediate: true, force: true });
 
     const tl = playLogoIntro();
 
     const applyFinalState = () => {
-      headerCtrl?.setCompact(!shouldExpandHeader(ns), { immediate: true });
+      headerCtrl?.setCompact(!shouldExpandHeader(ns), {
+        immediate: true,
+        force: true,
+      });
     };
 
     if (tl) tl.eventCallback('onComplete', applyFinalState);

@@ -130,11 +130,14 @@ export const createHeaderController = () => {
     });
   });
 
-  const setCompact = (next, { immediate = false } = {}) => {
-    if (!tlCompact) return null;
+  const setCompact = (next, { immediate = false, force = false } = {}) => {
+    if (!tlCompact) {
+      isCompact = next;
+      return null;
+    }
 
     // Si ya está en ese estado, no hagas nada (esto evita doble animación)
-    if (next === isCompact) return tlCompact;
+    if (next === isCompact && !(immediate || force)) return tlCompact;
 
     isCompact = next;
 
