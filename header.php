@@ -22,6 +22,8 @@
         <meta name="theme-color" content="#000000">
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
         <?php wp_head(); ?>
     </head>
@@ -30,14 +32,16 @@
 
         <!-- Loader -->
         <div class="loader">
-            <div id="gif-loader" class="loader__wrapper-gif">
-                <img class="loader__gif image--fluid" src="<?php echo TDU . '/assets/images/loading/loading.gif'; ?>">
-                  <!-- Counter
-                  <div class="loader__counter">
-                    <span data-loader-percent>0%</span>
-                </div>  -->
+            <div class="loader__inner">
+                <div id="gif-loader" class="loader__wrapper-gif">
+                    <img class="loader__gif image--fluid" src="<?php echo TDU . '/assets/images/loading/loading.gif'; ?>">
+                      <!-- Counter
+                      <div class="loader__counter">
+                        <span data-loader-percent>0%</span>
+                    </div>  -->
+                </div>
+                <canvas id="burn-canvas"></canvas>
             </div>
-            <canvas id="burn-canvas"></canvas>
         </div>
         <!--End loader -->
 

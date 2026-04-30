@@ -4,12 +4,20 @@
 .loader {
     position: fixed;
     inset: 0;
-    background: #FB9701;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: index.$black;
+   
     z-index: 9999;
     overflow: hidden;
+
+    // Inner
+    &__inner {
+        width: 100%;
+        height: 100%;
+        background: #FB9701;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
 
     // Is done
