@@ -13,7 +13,7 @@
 
 <!-- Project presentation -->
 <div class="project-presentation">
-    <div class="project-presentation__inner container grid-columns-l--12" data-projects-results data-term="<?php echo esc_attr($term); ?>" data-max-pages="<?php echo esc_attr($max_pages); ?>">
+    <div class="project-presentation__inner container grid-columns-l--12" data-projects-results data-term="<?php echo esc_attr($term); ?>" data-max-pages="<?php if( isset($max_pages) && !empty($max_pages) ) echo esc_attr($max_pages); ?>">
         <!-- Populated by JS -->
     </div>
     

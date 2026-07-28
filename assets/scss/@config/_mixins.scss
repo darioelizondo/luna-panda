@@ -1,0 +1,38 @@
+@use './variables';
+@use './breakpoints';
+
+// Mixins
+@mixin button {
+    width: 100%;
+    color: variables.$black;
+    background-color: variables.$primary;
+    padding: calc( variables.$lh / 3 ) calc( variables.$lh );
+    border-radius: calc( variables.$lh / 3 );
+    text-align: center;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 700;
+    transition: all .3s ease;
+
+    @include breakpoints.m {
+        width: auto;
+        display: inline-flex;
+        padding: calc( variables.$lh / 3 ) calc( variables.$lh );
+    }
+
+    @include breakpoints.l {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    @include breakpoints.xxl {
+        font-size: 19px;
+        line-height: 25px;
+    }
+
+    &:hover {
+        background: variables.$white;
+        color: variables.$black;
+    }
+
+}

@@ -11,6 +11,7 @@ import { createProjectsFilter } from './modules/projects-filter';
 import { animateProjectItems } from './modules/projects-animate';
 import { sliderBlock } from './modules/slider-block';
 import { relatedProjectsCarousel } from './modules/related-projects-carousel';
+import { heroBlockSlider } from './modules/hero-block-slider';
 
 const controllersMap = new WeakMap(); // key: root(container), value: controllers[]
 
@@ -73,6 +74,9 @@ function init(root = document) {
 
   // Related products
   controllers.push(asController(relatedProjectsCarousel(root)));
+
+  // Hero block slider (scoped)
+  controllers.push(asController(heroBlockSlider(root)));
 
   // Limpieza de nulls
   const cleaned = controllers.filter(Boolean);

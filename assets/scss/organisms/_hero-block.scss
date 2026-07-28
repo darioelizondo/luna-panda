@@ -1,0 +1,162 @@
+@use '../@config/index';
+
+// Hero block
+.hero-block {
+    width: 100%;
+    height: 100vh;
+
+    // Inner
+    &__inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    // Slider
+    &__slider {
+        position: absolute;
+        width: 100%;
+        // height: 100%;
+        top: 0;
+        right: 0;
+        // right: -24px;
+        pointer-events: none;
+        overflow: hidden;
+
+        @include index.m {
+            // right: -40px;
+        }
+
+        @include index.l {
+            // right: -30px;
+        }
+
+
+    }
+
+    // Content
+    &__content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 75px;
+
+        @include index.l {
+            padding-left: 0;
+        }
+
+    }
+
+    &__content-inner {
+        display: grid;
+        gap: index.$lh;
+        width: 100%;
+
+        @include index.l {
+            gap: calc( index.$lh * 2 );
+        }
+
+    }
+
+    // Title
+    &__title {
+
+        @include index.l {
+            grid-column: 3 / span 7;
+        }
+
+        * {
+            color: index.$primary;
+            font-size: 28px;
+            line-height: 36px;
+            font-weight: 700;
+
+            @include index.m {
+                font-size: 40px;
+                line-height: 50px;
+            }
+    
+            @include index.l {
+                font-size: 46px;
+                line-height: 52px;
+            }
+    
+            @include index.xl {
+                font-size: 65px;
+                line-height: 75px;
+            }
+    
+            @include index.xxl {
+                font-size: 70px;
+                line-height: 80px;
+            }
+        }
+
+
+    }
+
+    // Description
+    &__description {
+
+        @include index.l {
+            grid-column: 3 / span 7;
+        }
+
+
+        * {
+            color: index.$soft-primary;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 400;
+
+            @include index.m {
+                font-size: 18px;
+                line-height: 26px;
+            }
+    
+            @include index.l {
+                font-size: 22px;
+                line-height: 28px;
+            }
+    
+            @include index.xl {
+                font-size: 24px;
+                line-height: 30px;
+            }
+    
+            @include index.xxl {
+                font-size: 26px;
+                line-height: 34px;
+            }
+        }
+
+    }
+
+    // Button
+    &__wrapper-button {
+        @include index.l {
+            grid-column: 3 / span 9;
+        }
+    }
+
+    &__button {
+        @include index.button;
+    }
+
+    // Overlay
+    &__overlay {
+        position: absolute;
+        width: 100%;
+        height: 25%;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient( 0deg,rgba(0, 0, 0, 1 ) 0%, rgba( 0, 0, 0, 0 ) 100%);
+        z-index: 3;
+        pointer-events: none;
+    }
+}

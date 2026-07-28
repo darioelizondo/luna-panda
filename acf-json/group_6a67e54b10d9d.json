@@ -1,0 +1,176 @@
+{
+    "key": "group_6a67e54b10d9d",
+    "title": "@Default page modules",
+    "fields": [
+        {
+            "key": "field_6a67e54b539fb",
+            "label": "Default page modules",
+            "name": "default_page_modules",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_6a67e58140360": {
+                    "key": "layout_6a67e58140360",
+                    "name": "text_block",
+                    "label": "Text block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a67e5a4539fc",
+                            "label": "Text block",
+                            "name": "text_block",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_699a2c5972cb2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6a67e6ae539fd": {
+                    "key": "layout_6a67e6ae539fd",
+                    "name": "image_block",
+                    "label": "Image block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a67e6b753a00",
+                            "label": "Image block",
+                            "name": "image_block",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_699e3d4be337f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6a67e71853a01": {
+                    "key": "layout_6a67e71853a01",
+                    "name": "slider_block",
+                    "label": "Slider block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a67e71a53a04",
+                            "label": "Slider block",
+                            "name": "slider_block",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_699fcfe030886"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6a67eb24e76d9": {
+                    "key": "layout_6a67eb24e76d9",
+                    "name": "hero_block",
+                    "label": "Hero block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a67eb2be76dc",
+                            "label": "Hero block",
+                            "name": "hero_block",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6a67e74613989"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Row"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/page-default.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1785195431
+}

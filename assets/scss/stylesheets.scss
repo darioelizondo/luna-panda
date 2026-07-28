@@ -29,6 +29,7 @@
 @use 'molecules/logo-slider';
 @use 'molecules/project-item';
 @use 'molecules/related-projects';
+@use 'molecules/hero-block-slider';
 
 
 // Organisms
@@ -44,3 +45,4 @@
 @use 'organisms/single-project';
 @use 'organisms/page-about-us';
 @use 'organisms/contact-us';
+@use 'organisms/hero-block';

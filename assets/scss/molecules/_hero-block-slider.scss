@@ -1,0 +1,56 @@
+@use '../@config/index';
+
+// Hero block slider
+.hero-block-slider {
+    transition: all .4s ease;
+
+    // Slide
+    &__slide {
+        width: 100%;
+        height: 100%;
+        height: 100vh;
+        background: center center no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        opacity: 0 !important;
+        transition: opacity 1.2s ease; // Same as hero-block-slider.js
+
+        &.swiper-slide-active,
+        &.swiper-slide-duplicate-active {
+            opacity: 1 !important;
+        }
+
+        &.swiper-slide-active .hero-block-slider__image,
+        &.swiper-slide-duplicate-active .hero-block-slider__image {
+            transform: scale(1); // Smooth zoom in
+            transition: transform 8s linear;
+        }
+
+        &.swiper-slide-prev .hero-block-slider__image,
+        &.swiper-slide-duplicate-prev .hero-block-slider__image {
+            transform: scale(1);
+            transition: none;
+        }
+
+    }   
+
+    // Picture
+    &__picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        line-height: 1;
+        overflow: hidden;
+    }
+
+    // Image
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        transform: scale(1.1);
+        will-change: transform;
+    }
+    
+}

@@ -18,7 +18,7 @@
 <!-- Text block -->
 <div <?= $attrs; ?>>
     <div class="<?php echo $layout; ?>__inner">
-        <?php echo $text_block[ 'text' ]; ?>
+        <?php echo  wp_kses_post( $text_block[ 'text' ] ); ?>
     </div>
 </div>
 <!-- End text block -->
