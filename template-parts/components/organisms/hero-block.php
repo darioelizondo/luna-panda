@@ -20,12 +20,12 @@
     <!-- Hero block -->
     <section class="hero-block" data-hero-block>
         <div class="hero-block__inner">
+            <!-- Overlay -->
+            <div class="hero-block__overlay"></div>
+            <!-- End Overlay -->
             <!-- Slider -->
             <div class="hero-block__slider">
                 <?php get_template_part( 'template-parts/components/molecules/hero-block-slider', null, [ 'data' => $data ]  ); ?>
-                <!-- Overlay -->
-                <div class="hero-block__overlay"></div>
-                <!-- End Overlay -->
             </div>
             <!-- End slider -->
             <!-- Content -->

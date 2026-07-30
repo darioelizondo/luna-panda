@@ -112,6 +112,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6a68a00100030": {
+                    "key": "layout_6a68a00100030",
+                    "name": "before_after_image_comparison",
+                    "label": "Before / After Image Comparison",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a68a00100031",
+                            "label": "Before / After Image Comparison",
+                            "name": "before_after_image_comparison",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6a68a00100001"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -140,5 +172,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772153730
+    "modified": 1785370002
 }

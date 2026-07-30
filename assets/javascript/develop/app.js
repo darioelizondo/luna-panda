@@ -12,6 +12,7 @@ import { animateProjectItems } from './modules/projects-animate';
 import { sliderBlock } from './modules/slider-block';
 import { relatedProjectsCarousel } from './modules/related-projects-carousel';
 import { heroBlockSlider } from './modules/hero-block-slider';
+import { beforeAfterImageComparison } from './modules/before-after-image-comparison';
 
 const controllersMap = new WeakMap(); // key: root(container), value: controllers[]
 
@@ -77,6 +78,9 @@ function init(root = document) {
 
   // Hero block slider (scoped)
   controllers.push(asController(heroBlockSlider(root)));
+
+  // Before / After Image Comparison (scoped)
+  controllers.push(asController(beforeAfterImageComparison(root)));
 
   // Limpieza de nulls
   const cleaned = controllers.filter(Boolean);

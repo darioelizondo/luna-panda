@@ -144,6 +144,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6a6ab6d7acc7b": {
+                    "key": "layout_6a6ab6d7acc7b",
+                    "name": "before_after_image_comparison",
+                    "label": "Before \/ After Image Comparison",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6a6ab6e6acc7e",
+                            "label": "Before \/ After Image Comparison",
+                            "name": "before_after_image_comparison",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6a68a00100001"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -172,5 +204,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1785195431
+    "modified": 1785378557
 }
