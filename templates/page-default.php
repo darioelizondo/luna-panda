@@ -11,7 +11,7 @@
 ?>
 
     <section class="default-page">
-        <div class="default-page__inner container">
+        <div class="default-page__inner">
             
            <?php
                 // Flexible content modules

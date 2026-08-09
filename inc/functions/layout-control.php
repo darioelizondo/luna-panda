@@ -48,41 +48,74 @@
      * Generates HTML attributes for the module wrapper:
      * id, class, style (with CSS vars of grid/offset per breakpoint)
      */
-    function layout_control_attrs( $layout_name, $base_class = 'layout-control', $extra_classes = '') {
+    function layout_control_attrs(
+        $layout_name,
+        $base_class = 'layout-control',
+        $extra_classes = '',
+        $extra_styles = []
+    ) {
         $c = get_layout_controls( $layout_name );
 
-        // clamps
+        // Clamps
         $c['span_d']  = max(1, min(12, $c['span_d']));
         $c['start_d'] = max(1, min(12, $c['start_d']));
         $c['span_m']  = max(1, min(2, $c['span_m']));
         $c['start_m'] = max(1, min(2, $c['start_m']));
 
-        $base_class   = td_sanitize_class_list($base_class);
-        $extra_classes = td_sanitize_class_list($extra_classes);
+        $base_class    = td_sanitize_class_list( $base_class );
+        $extra_classes = td_sanitize_class_list( $extra_classes );
 
-        $classes = trim($base_class . ' ' . $extra_classes . ' ' . $c['class']);
+        $classes = trim(
+            $base_class . ' ' .
+            $extra_classes . ' ' .
+            $c['class']
+        );
 
         $style = [];
-        // mobile
+
+        // Mobile
         $style[] = '--lc-span:' . $c['span_m'];
         $style[] = '--lc-start:' . $c['start_m'];
         $style[] = '--lc-ox:' . $c['ox_m'] . 'px';
         $style[] = '--lc-oy:' . $c['oy_m'] . 'px';
-        // desktop
+
+        // Desktop
         $style[] = '--lc-d-span:' . $c['span_d'];
         $style[] = '--lc-d-start:' . $c['start_d'];
         $style[] = '--lc-d-ox:' . $c['ox_d'] . 'px';
         $style[] = '--lc-d-oy:' . $c['oy_d'] . 'px';
 
-        if ($c['z'] !== null) {
+        if ( $c['z'] !== null ) {
             $style[] = 'z-index:' . $c['z'];
             $style[] = 'position:relative';
         }
 
-        $attr = [];
-        if (!empty($c['id'])) $attr[] = 'id="' . esc_attr($c['id']) . '"';
-        $attr[] = 'class="' . esc_attr($classes) . '"';
-        $attr[] = 'style="' . esc_attr(implode(';', $style)) . '"';
+        /*
+        * Additional component-specific styles.
+        */
+        if ( is_array( $extra_styles ) && ! empty( $extra_styles ) ) {
+            foreach ( $extra_styles as $extra_style ) {
+                $extra_style = trim( (string) $extra_style );
 
-        return implode(' ', $attr);
+                if ( $extra_style !== '' ) {
+                    $style[] = $extra_style;
+                }
+            }
+        }
+
+        $attr = [];
+
+        if ( ! empty( $c['id'] ) ) {
+            $attr[] = 'id="' . esc_attr( $c['id'] ) . '"';
+        }
+
+        $attr[] = 'class="' . esc_attr( $classes ) . '"';
+
+        if ( ! empty( $style ) ) {
+            $attr[] = 'style="' . esc_attr(
+                implode( ';', $style )
+            ) . '"';
+        }
+
+        return implode( ' ', $attr );
     }

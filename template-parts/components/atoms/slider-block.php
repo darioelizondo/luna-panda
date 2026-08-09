@@ -15,6 +15,8 @@
 
     $slider_block = get_sub_field('slider_block');
 
+    $need_container = $slider_block[ 'need_container' ];
+
 
     if ( !isset( $slider_block[ 'items' ] ) || empty( $slider_block[ 'items' ] ) ) return;
 
@@ -34,31 +36,39 @@
     ?>
 
     <!-- Slider block -->
-    <div <?= $attrs; ?>>
-        <div class="<?php echo $layout; ?>__inner">
+    <?php if ( $need_container ): ?>
+        <div class="container grid-columns-s--2 grid-columns-l--12">
+    <?php endif; ?>
 
-            <div
-                class="<?php echo $layout; ?>__swiper swiper"
-                data-swiper
-                data-spv-mobile="<?= esc_attr($spv_m); ?>"
-                data-spv-desktop="<?= esc_attr($spv_d); ?>"
-                data-space-mobile="<?= esc_attr($sb_m); ?>"
-                data-space-desktop="<?= esc_attr($sb_d); ?>"
-            >
-                <div class="<?php echo $layout; ?>__wrapper swiper-wrapper">
-                    <?php foreach ( $slider_block[ 'items' ] as $nkey => $item ) : ?>
+        <div <?= $attrs; ?>>
+            <div class="<?php echo $layout; ?>__inner">
 
-                        <div class="<?php echo $layout; ?>__slide swiper-slide <?php echo $layout . '--' . ( $nkey + 1 ) ; ?>">
-                        <picture class="<?php echo $layout; ?>__picture">
-                                <img class="<?php echo $layout; ?>__image image--fluid" src="<?php echo esc_url( $item['image']['url'] ); ?>" alt="<?php echo esc_attr( $item['image']['alt'] ); ?>" />
-                            </picture>
-                        </div>
+                <div
+                    class="<?php echo $layout; ?>__swiper swiper"
+                    data-swiper
+                    data-spv-mobile="<?= esc_attr($spv_m); ?>"
+                    data-spv-desktop="<?= esc_attr($spv_d); ?>"
+                    data-space-mobile="<?= esc_attr($sb_m); ?>"
+                    data-space-desktop="<?= esc_attr($sb_d); ?>"
+                >
+                    <div class="<?php echo $layout; ?>__wrapper swiper-wrapper">
+                        <?php foreach ( $slider_block[ 'items' ] as $nkey => $item ) : ?>
 
-                    <?php endforeach; ?>
+                            <div class="<?php echo $layout; ?>__slide swiper-slide <?php echo $layout . '--' . ( $nkey + 1 ) ; ?>">
+                            <picture class="<?php echo $layout; ?>__picture">
+                                    <img class="<?php echo $layout; ?>__image image--fluid" src="<?php echo esc_url( $item['image']['url'] ); ?>" alt="<?php echo esc_attr( $item['image']['alt'] ); ?>" />
+                                </picture>
+                            </div>
+
+                        <?php endforeach; ?>
+                    </div>
+                    
                 </div>
-                
-            </div>
 
+            </div>
         </div>
-    </div>
+
+    <?php if ( $need_container ): ?>
+        </div>
+    <?php endif; ?>
     <!-- End slider block -->

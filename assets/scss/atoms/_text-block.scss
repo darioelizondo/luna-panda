@@ -3,147 +3,43 @@
 // Text block
 .text_block {
 
-    // Inner
     &__inner {
         width: 100%;
     }
 
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: var(--text-block-font-size-mobile, 14px);
+        line-height: 1.35;
+
+        @include index.l {
+            font-size: var(--text-block-font-size-tablet, 16px);
+        }
+
+        @include index.xxl {
+            font-size: var(--text-block-font-size-desktop, 19px);
+        }
+    }
+
     p {
-        color: index.$soft-primary;
-        font-size: 14px;
-        line-height: 20px;
+        color: var(--text-block-color, index.$soft-primary);
         font-weight: 400;
-
-        @include index.l {
-            font-size: 16px;
-            line-height: 22px;
-        }
-
-        @include index.xxl {
-            font-size: 19px;
-            line-height: 25px;
-        }
-
     }
 
-    h1 {
-        color: index.$primary;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--text-block-color, index.$primary);
         font-family: index.$font-primary;
-        font-size: 14px;
-        line-height: 20px;
         font-weight: 700;
-        font-style: italic;
-
-        @include index.l {
-            font-size: 16px;
-            line-height: 22px;
-        }
-
-        @include index.xxl {
-            font-size: 19px;
-            line-height: 25px;
-        }
-
+        // font-style: italic;
     }
-
-    h2 {
-        color: index.$primary;
-        font-family: index.$font-primary;
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 700;
-        font-style: italic;
-
-       @include index.l {
-            font-size: 16px;
-            line-height: 22px;
-        }
-
-        @include index.xxl {
-            font-size: 19px;
-            line-height: 25px;
-        }
-
-    }
-
-    h3 {
-        color: index.$primary;
-        font-family: index.$font-primary;
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 700;
-        font-style: italic;
-
-       @include index.l {
-            font-size: 16px;
-            line-height: 22px;
-        }
-
-        @include index.xxl {
-            font-size: 19px;
-            line-height: 25px;
-        }
-
-    }
-
-    h4 {
-        color: index.$primary;
-        font-family: index.$font-primary;
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 700;
-        font-style: italic;
-
-       @include index.l {
-            font-size: 16px;
-            line-height: 22px;
-        }
-
-        @include index.xxl {
-            font-size: 19px;
-            line-height: 25px;
-        }
-
-    }
-
-    h5 {
-        color: index.$primary;
-        font-family: index.$font-primary;
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 700;
-        font-style: italic;
-
-       @include index.l {
-            font-size: 16px;
-            line-height: 22px;
-        }
-
-        @include index.xxl {
-            font-size: 19px;
-            line-height: 25px;
-        }
-    
-    }
-
-    h6  {
-        color: index.$primary;
-        font-family: index.$font-primary;
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 700;
-        font-style: italic;
-
-       @include index.l {
-            font-size: 16px;
-            line-height: 22px;
-        }
-
-        @include index.xxl {
-            font-size: 19px;
-            line-height: 25px;
-        }
-
-    }
-    
 }

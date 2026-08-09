@@ -2,22 +2,22 @@
 
 .before_after_image_comparison {
     --before-after-position: 50%;
-    padding-top: 148px;
+    padding-top: 100px;
 
     @include index.m {
-        padding-top: 201px;
+        padding-top: 150px;
     }
 
     @include index.l {
-        padding-top: 255px;
+        padding-top: 115px;
     }
 
     @include index.xl {
-        padding-top: 169px;
+        padding-top: 125px;
     }
 
     @include index.xxl {
-        padding-top: 197px;
+        padding-top: 150px;
     }
 
     &__inner {

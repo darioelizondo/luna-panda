@@ -15,21 +15,29 @@
 
     $image_sm   = $image_block[ 'image_sm' ];
     $image_xl   = $image_block[ 'image_xl' ];
+    $need_container = $image_block[ 'need_container' ];
 ?>
 
 <!-- Image block -->
-<div <?= $attrs; ?>>
-    <div class="<?php echo $layout; ?>__inner">
-        <picture class="<?php echo $layout; ?>__picture">
-            <source media="(min-width: 1024px)" srcset="<?php echo esc_url( $image_xl['url'] ); ?>" />
-            <img 
-                class="<?php echo $layout; ?>__image image--fluid"
-                src="<?php echo esc_url( $image_sm['url'] ); ?>" 
-                alt="<?php echo esc_attr( $image_sm['alt'] ); ?>" 
-                width="<?php echo esc_attr( $image_sm['width'] ); ?>" 
-                height="<?php echo esc_attr( $image_sm['height'] ); ?>"
-            />
-        </picture>
+<?php if ( $need_container ): ?>
+    <div class="container grid-columns-s--2 grid-columns-l--12">
+<?php endif; ?>
+
+        <div <?= $attrs; ?>>
+            <div class="<?php echo $layout; ?>__inner">
+                <picture class="<?php echo $layout; ?>__picture">
+                    <source media="(min-width: 1024px)" srcset="<?php echo esc_url( $image_xl['url'] ); ?>" />
+                    <img 
+                        class="<?php echo $layout; ?>__image image--fluid"
+                        src="<?php echo esc_url( $image_sm['url'] ); ?>" 
+                        alt="<?php echo esc_attr( $image_sm['alt'] ); ?>" 
+                        width="<?php echo esc_attr( $image_sm['width'] ); ?>" 
+                        height="<?php echo esc_attr( $image_sm['height'] ); ?>"
+                    />
+                </picture>
+            </div>
+        </div>
+<?php if ( $need_container ): ?>
     </div>
-</div>
+<?php endif; ?>
 <!-- End image block -->
