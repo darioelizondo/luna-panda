@@ -21,6 +21,8 @@
 @use 'atoms/text-block';
 @use 'atoms/image-block';
 @use 'atoms/before-after-image-comparison';
+@use 'atoms/button-block';
+
 
 
 // Molecules
@@ -45,5 +47,6 @@
 @use 'organisms/page-projects';
 @use 'organisms/single-project';
 @use 'organisms/page-about-us';
+@use 'organisms/default-page';
 @use 'organisms/contact-us';
 @use 'organisms/hero-block';

@@ -34,11 +34,13 @@
                             'layout' => $layout,
                         ];
                         
-                        if ( $layout === 'text_block' ) {            get_template_part('template-parts/components/atoms/text-block', null, $args); }
-                        if ( $layout === 'image_block' ) {           get_template_part('template-parts/components/atoms/image-block', null, $args); }
-                        if ( $layout === 'slider_block' ) {          get_template_part('template-parts/components/atoms/slider-block', null, $args); }
-                        if ( $layout === 'hero_block' ) {            get_template_part('template-parts/components/organisms/hero-block', null, $args); }
-                        if ( $layout === 'before_after_image_comparison' ) { get_template_part('template-parts/components/atoms/before-after-image-comparison', null, $args); }
+                        if ( $layout === 'text_block' ) {                       get_template_part('template-parts/components/atoms/text-block', null, $args); }
+                        if ( $layout === 'image_block' ) {                      get_template_part('template-parts/components/atoms/image-block', null, $args); }
+                        if ( $layout === 'slider_block' ) {                     get_template_part('template-parts/components/atoms/slider-block', null, $args); }
+                        if ( $layout === 'hero_block' ) {                       get_template_part('template-parts/components/organisms/hero-block', null, $args); }
+                        if ( $layout === 'before_after_image_comparison' ) {    get_template_part('template-parts/components/atoms/before-after-image-comparison', null, $args); }
+                        if ( $layout === 'button_block' ) {                     get_template_part('template-parts/components/atoms/button-block', null, $args); }
+                        if ( $layout === 'logos_carousel' ) {                   get_template_part('template-parts/components/organisms/logos-carousel', null, $args); }
 
                     endwhile;
                 endif;

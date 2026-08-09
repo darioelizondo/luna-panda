@@ -1,0 +1,22 @@
+@use '../@config/index';
+
+// Default page
+.default-page {
+    min-height: 100vh;
+    padding-bottom: 150px;
+
+    // Inner
+    &__inner {
+        // display: grid;
+        // grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+        // gap: index.$lh;
+        padding-left: 75px;
+
+        @include index.l {
+            // display: grid;
+            // grid-template-columns: repeat( 12, minmax( 0, 1fr ) );
+            padding-left: 0;
+        }
+    }
+
+}

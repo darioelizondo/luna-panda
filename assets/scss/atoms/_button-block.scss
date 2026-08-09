@@ -1,0 +1,5 @@
+@use '../@config/index';
+
+.single-button {
+    @include index.button;
+}

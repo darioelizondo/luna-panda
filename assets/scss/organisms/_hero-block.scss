@@ -5,6 +5,11 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    padding: 0 index.$lh;
+
+    @include index.l {
+        padding: 0;
+    }
 
     // Inner
     &__inner {
@@ -45,11 +50,11 @@
         height: 100%;
         display: flex;
         align-items: center;
-        padding-left: 75px;
+        // padding-left: 75px;
 
-        @include index.l {
-            padding-left: 0;
-        }
+        // @include index.l {
+        //     padding-left: 0;
+        // }
 
     }
 

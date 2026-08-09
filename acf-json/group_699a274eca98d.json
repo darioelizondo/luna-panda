@@ -223,8 +223,8 @@
                         "id": ""
                     },
                     "default_value": 0,
-                    "min": -250,
-                    "max": 250,
+                    "min": -1000,
+                    "max": 1000,
                     "allow_in_bindings": 0,
                     "placeholder": "",
                     "step": "",
@@ -246,8 +246,8 @@
                         "id": ""
                     },
                     "default_value": 0,
-                    "min": -250,
-                    "max": 250,
+                    "min": -1000,
+                    "max": 1000,
                     "allow_in_bindings": 0,
                     "placeholder": "",
                     "step": "",
@@ -269,8 +269,8 @@
                         "id": ""
                     },
                     "default_value": 0,
-                    "min": -400,
-                    "max": 400,
+                    "min": -2000,
+                    "max": 2000,
                     "allow_in_bindings": 0,
                     "placeholder": "",
                     "step": "",
@@ -292,8 +292,8 @@
                         "id": ""
                     },
                     "default_value": 0,
-                    "min": -400,
-                    "max": 400,
+                    "min": -2000,
+                    "max": 2000,
                     "allow_in_bindings": 0,
                     "placeholder": "",
                     "step": "",
@@ -389,5 +389,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1771711518
+    "modified": 1786311493
 }

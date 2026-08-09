@@ -11,8 +11,6 @@
     $layout = $args['layout'] ?? '';
     $attrs = layout_control_attrs( $layout , 'layout-control', $layout );
 
-    print_r( $layout );
-
     $slider_block = get_sub_field('slider_block');
 
     $need_container = $slider_block[ 'need_container' ];
