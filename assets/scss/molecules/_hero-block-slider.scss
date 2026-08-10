@@ -3,6 +3,12 @@
 // Hero block slider
 .hero-block-slider {
     transition: all .4s ease;
+    overflow: hidden;
+    height: auto;
+
+    @include index.l {
+        height: 100vh;
+    }
 
     // Slide
     &__slide {

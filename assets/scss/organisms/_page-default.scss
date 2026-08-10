@@ -1,0 +1,10 @@
+@use '../@config/index';
+
+// Default page
+.default-page {
+    margin-bottom: var(--page-bottom-adjustment-mobile, 0px);
+
+     @include index.l {
+            margin-bottom: var(--page-bottom-adjustment-desktop, 0px );
+        }
+}

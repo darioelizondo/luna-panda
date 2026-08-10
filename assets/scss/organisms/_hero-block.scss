@@ -8,6 +8,7 @@
     padding: 0 index.$lh;
 
     @include index.l {
+        // height: 100vh;
         padding: 0;
     }
 

@@ -22,6 +22,8 @@
 @use 'atoms/image-block';
 @use 'atoms/before-after-image-comparison';
 @use 'atoms/button-block';
+@use 'atoms/video-embed';
+@use 'atoms/contact-block';
 
 
 
@@ -50,3 +52,4 @@
 @use 'organisms/default-page';
 @use 'organisms/contact-us';
 @use 'organisms/hero-block';
+@use 'organisms/page-default';

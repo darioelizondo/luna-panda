@@ -41,6 +41,8 @@
                         if ( $layout === 'before_after_image_comparison' ) {    get_template_part('template-parts/components/atoms/before-after-image-comparison', null, $args); }
                         if ( $layout === 'button_block' ) {                     get_template_part('template-parts/components/atoms/button-block', null, $args); }
                         if ( $layout === 'logos_carousel' ) {                   get_template_part('template-parts/components/organisms/logos-carousel', null, $args); }
+                        if ( $layout === 'video_embed' ) {                      get_template_part('template-parts/components/atoms/video-embed', null, $args); }
+                        if ( $layout === 'contact_block' ) {                    get_template_part('template-parts/components/atoms/contact-block', null, $args); }
 
                     endwhile;
                 endif;
