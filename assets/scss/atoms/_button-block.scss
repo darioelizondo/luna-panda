@@ -3,3 +3,25 @@
 .single-button {
     @include index.button;
 }
+
+.button-block--floating {
+    position: fixed !important;
+    right: 5%;
+    bottom: 20px;
+    width: 90%;
+    z-index: 100;
+    transform: none;
+
+    .single-button {
+        width: 100%;
+    }
+
+    @include index.m {
+        right: 20px;
+        width: auto;
+
+        .single-button {
+            width: auto;
+        }
+    }
+}

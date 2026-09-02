@@ -53,6 +53,7 @@
                     if ( is_front_page() ) return 'home';
                     if ( is_page_template( 'templates/page-projects.php' ) ) return 'projects';
                     if ( is_page_template( 'templates/page-contact.php' ) ) return 'contact';
+                    if ( is_page_template( 'templates/page-default.php' ) ) return 'landing';
                     if ( is_singular( 'project' ) ) return 'projects';
                     return 'inner';
                 }

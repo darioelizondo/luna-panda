@@ -20,6 +20,7 @@ if ( !$button ) {
 $text = $button['button']['title'] ?? '';
 $url = $button['button']['url'] ?? '';
 $need_container = !empty( $button['need_container'] );
+$is_floating = !empty( $button['is_floating'] );
 
 
 /*
@@ -28,7 +29,7 @@ $need_container = !empty( $button['need_container'] );
 $attrs = layout_control_attrs(
     $layout,
     'layout-control',
-    $layout,
+    trim( $layout . ( $is_floating ? ' button-block--floating' : '' ) ),
 );
 
 ?>

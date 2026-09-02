@@ -93,6 +93,27 @@
                     "ui_off_text": ""
                 },
                 {
+                    "key": "field_68b6f701f10a1",
+                    "label": "Floating button?",
+                    "name": "is_floating",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Fixes the button to the bottom-right corner of the viewport.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_6a78e2d318f11",
                     "label": "Layout controls",
                     "name": "layout_controls",
@@ -141,5 +162,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1786307320
+    "modified": 1788307200
 }

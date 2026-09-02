@@ -111,6 +111,18 @@ const AppBarba = () => {
     return namespace === 'home';
   };
 
+  const applyMenuStateByNamespace = (namespace) => {
+    const menu = document.querySelector('.js-menu');
+    if (!menu) return;
+
+    if (namespace === 'landing') {
+      menu.style.display = 'none';
+    } else {
+      // Restauramos el display definido por CSS en lugar de imponer uno.
+      menu.style.removeProperty('display');
+    }
+  };
+
   const scrollToTopSmooth = (duration = 0.35) => {
     const state = { y: window.scrollY };
     return gsap.to(state, {
@@ -165,6 +177,7 @@ const AppBarba = () => {
     headerCtrl = createHeaderController();
 
     const initialNs = container.getAttribute('data-barba-namespace') || 'default';
+    applyMenuStateByNamespace(initialNs);
     applyHeaderStateByNamespace(initialNs, { animateExpandOnEnter: false });
     applyHomeSnapByNamespace(initialNs);
   };
@@ -210,6 +223,7 @@ const AppBarba = () => {
         before(data) {
           pendingNextPath = data?.next?.url?.path || '';
           pendingNextNamespace = getNamespace(data?.next);
+          applyMenuStateByNamespace(pendingNextNamespace);
         },
 
         beforeEnter(data) {
@@ -278,6 +292,7 @@ const AppBarba = () => {
     window.App?.init?.(next.container);
 
     const ns = getNamespace(next);
+    applyMenuStateByNamespace(ns);
     applyHeaderStateByNamespace(ns, { animateExpandOnEnter: false });
     applyHomeSnapByNamespace(ns);
   });
@@ -301,6 +316,7 @@ const AppBarba = () => {
     // Solo animar expansión si venimos de compacta a expandida
     const animateExpandOnEnter = !prevExpanded && nextExpanded;
 
+    applyMenuStateByNamespace(ns);
     applyHeaderStateByNamespace(ns, { animateExpandOnEnter });
     applyHomeSnapByNamespace(ns);
 
